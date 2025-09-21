@@ -16,7 +16,17 @@ BEGIN
     (
     --  NOMBRE        TIPO        RESTRCCIÓN 
         TipoDoc       TINYINT     PRIMARY KEY,
-        Descripcion   VARCHAR(3)  NOT NULL
+        Descripcion   VARCHAR(3)  NOT NULL,
+
+
+        -- RESTRICCIÓN CK Pra la descripción del 
+        -- TipoDoc
+        CONSTRAINT CK_Desc_Tipo_Doc CHECK 
+        (
+            Descripcion     =    'DNI'  OR
+            Descripcion     =    'LC'   OR
+            Descripcion     =    'PAS'              
+        )
     ); -- FIN CREACIÓN
 
     -- LOTE DE PRUEBA CON LOS TRES VALORES POSIBLES
@@ -29,3 +39,8 @@ BEGIN
                     ( 3,      'PAS'        )                    
 END 
 ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Tipo_Doc] Ya existe en la BD: db_alquileres_vehiculos')
+
+/*
+DROP TABLE  [db_alquileres_vehiculos].
+            [negocio].
+            [Tipo_Doc] */
