@@ -59,9 +59,13 @@ BEGIN
         -- MONTO_TOTAL >= 0
         CONSTRAINT CK_Monto_Aqlquiler CHECK 
         (
-             Monto_Total >= 0
+            Monto_Total >= 0
         )
     );
 END
+ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Alquiler] Ya existe en la BD: db_alquileres_vehiculos')
 
-
+/*
+DROP TABLE  [db_alquileres_vehiculos].
+            [negocio].
+            [Alquiler] */

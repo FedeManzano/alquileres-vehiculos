@@ -18,7 +18,6 @@ BEGIN
         TipoDoc       TINYINT     PRIMARY KEY,
         Descripcion   VARCHAR(3)  NOT NULL,
 
-
         -- RESTRICCIÓN CK Pra la descripción del 
         -- TipoDoc
         CONSTRAINT CK_Desc_Tipo_Doc CHECK 
