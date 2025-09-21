@@ -9,24 +9,23 @@ IF NOT EXISTS
           TABLE_SCHEMA  = 'negocio'
 )
 BEGIN 
+    -- CREACIÓN DE LA TABLA TIPO_DOC
     CREATE TABLE    [db_alquileres_vehiculos].
                     [negocio].
                     [Tipo_Doc] 
     (
-         TipoDoc TINYINT PRIMARY KEY,
-         Descripcion VARCHAR(3) NOT NULL
-    );
+    --  NOMBRE        TIPO        RESTRCCIÓN 
+        TipoDoc       TINYINT     PRIMARY KEY,
+        Descripcion   VARCHAR(3)  NOT NULL
+    ); -- FIN CREACIÓN
 
-
+    -- LOTE DE PRUEBA CON LOS TRES VALORES POSIBLES
     INSERT INTO     [db_alquileres_vehiculos].
                     [negocio].
                     [Tipo_Doc] 
-                    (
-                        TipoDoc, 
-                        Descripcion
-                    )
-                    VALUES 
-                    (1, 'DNI'),
-                    (2, 'LC'),
-                    (3, 'PAS')                    
-END
+                    ( TipoDoc, Descripcion ) VALUES 
+                    ( 1,      'DNI'        ),
+                    ( 2,      'LC'         ),
+                    ( 3,      'PAS'        )                    
+END 
+ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Tipo_Doc] Ya existe en la BD: db_alquileres_vehiculos')
