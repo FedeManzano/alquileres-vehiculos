@@ -46,5 +46,15 @@ BEGIN
 
     IF [db_utils].[library].[fn_Validate_Email](@EMAIL) = 0
         RETURN 6
+    
+    IF EXISTS 
+    (
+        SELECT 1
+        FROM    [db_alquileres_vehiculos].
+                [negocio]. 
+                [Cliente]
+        WHERE   @EMAIL = Email
+    )
+        RETURN 7
     RETURN 1
 END

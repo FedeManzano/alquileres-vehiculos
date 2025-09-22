@@ -119,10 +119,26 @@ BEGIN
             RAISERROR ( 'El email es inválido', 11, 1)
         END
 
+
+        IF [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
+        (
+            @T_DOC,
+            @NRO_DOC,
+            @NOMBRE,
+            @APELLIDO,
+            @DIRECCION,
+            @EMAIL,
+            @FNAC, 
+            @TEL
+        ) = 7
+        BEGIN 
+            SET @RES = 7
+            RAISERROR ( 'El email ya fué registrado en la BD', 11, 1)
+        END
+
+
         SET @NOMBRE     = TRIM(@NOMBRE)
         SET @APELLIDO   = TRIM(@APELLIDO)
-
-
         SET @EMAIL = LOWER(@EMAIL)
 
         EXEC [db_utils].[library].[sp_Format_Tittle] @DIRECCION OUTPUT 

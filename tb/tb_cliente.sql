@@ -55,5 +55,3 @@ ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Cliente] Ya existe en 
 DROP TABLE  [db_alquileres_vehiculos].
             [negocio].
             [Cliente] */
-
---DROP DATABASE db_alquileres_vehiculos

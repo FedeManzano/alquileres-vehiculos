@@ -21,7 +21,6 @@ BEGIN
         Telefono        VARCHAR(20),
         Direccion       VARCHAR(100)    NOT NULL
     );
-
 END
 ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Agencia] Ya existe en la BD: db_alquileres_vehiculos')
 
