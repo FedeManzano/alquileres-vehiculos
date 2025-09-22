@@ -24,3 +24,8 @@ BEGIN
 
 END
 ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Agencia] Ya existe en la BD: db_alquileres_vehiculos')
+
+/*
+DROP TABLE  [db_alquileres_vehiculos].
+            [negocio].
+            [Agencia] */
