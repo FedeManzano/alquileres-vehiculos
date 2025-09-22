@@ -44,3 +44,8 @@ el nombre de los archivos están en :green_book: [db_util](/utils).
         - :page_facing_up: <i>tb_tipo_doc.sql</i>
         - :page_facing_up: <i>tb_tipo_vehiculo.sql</i>
         - :page_facing_up: <i>tb_vehiculo.sql</i>
+
+
+## Autor
+
+[Federico Manzano](https://github.com/FedeManzano)
