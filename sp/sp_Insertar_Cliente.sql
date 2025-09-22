@@ -105,7 +105,7 @@ BEGIN
                 @SEVERIDAD = ERROR_SEVERITY(),
                 @ESTADO    = ERROR_STATE()
 
-        SET @RES = -1
+       -- SET @RES = -1
        -- RAISERROR (@MJE_ERROR, @SEVERIDAD, @ESTADO)
        
         IF @@ROWCOUNT > 1
