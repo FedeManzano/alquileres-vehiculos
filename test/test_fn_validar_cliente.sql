@@ -207,4 +207,83 @@ SET @OBTENIDO = [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
     '5401146547521'
 )
 
-EXEC [db_utils].[library].[sp_Assert_Equals] 9,'Nro Documento espacio medio',@ESPERADO, @OBTENIDO, NULL
+EXEC [db_utils].[library].[sp_Assert_Equals] 9,'Nro Documento espacio medio',@ESPERADO, @OBTENIDO, NULL 
+
+
+---- TEST 9 ---------------------------------------------------------------------------------------
+SET @ESPERADO =  1 -- SE ESPERA UN 1
+SET @OBTENIDO = -1
+
+SET @OBTENIDO = [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
+( 
+    1,
+    '11111111', 
+    'Federico', 
+    'Manzano', 
+    'B. Frione 4680 Ciudadela', 
+    'federico@gmail.com',  
+    '1987-01-03',
+    '5401146547521'
+)
+
+EXEC [db_utils].[library].[sp_Assert_Equals] 9,'Nombre válido',@ESPERADO, @OBTENIDO, NULL
+
+
+
+
+---- TEST 10 ---------------------------------------------------------------------------------------
+SET @ESPERADO =  4 -- SE ESPERA UN 4
+SET @OBTENIDO = -1
+
+SET @OBTENIDO = [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
+( 
+    1,
+    '11111111', 
+    'Fede*rico', 
+    'Manzano', 
+    'B. Frione 4680 Ciudadela', 
+    'federico@gmail.com',  
+    '1987-01-03',
+    '5401146547521'
+)
+
+EXEC [db_utils].[library].[sp_Assert_Equals] 10,'Nombre caracter especial medio',@ESPERADO, @OBTENIDO, NULL
+
+
+---- TEST 11 ---------------------------------------------------------------------------------------
+SET @ESPERADO =  4 -- SE ESPERA UN 4
+SET @OBTENIDO = -1
+
+SET @OBTENIDO = [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
+( 
+    1,
+    '11111111', 
+    'Federico*', 
+    'Manzano', 
+    'B. Frione 4680 Ciudadela', 
+    'federico@gmail.com',  
+    '1987-01-03',
+    '5401146547521'
+)
+
+EXEC [db_utils].[library].[sp_Assert_Equals] 11,'Nombre caracter especial final',@ESPERADO, @OBTENIDO, NULL
+
+
+
+---- TEST 12 ---------------------------------------------------------------------------------------
+SET @ESPERADO =  4 -- SE ESPERA UN 4
+SET @OBTENIDO = -1
+
+SET @OBTENIDO = [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
+( 
+    1,
+    '11111111', 
+    '+Federico', 
+    'Manzano', 
+    'B. Frione 4680 Ciudadela', 
+    'federico@gmail.com',  
+    '1987-01-03',
+    '5401146547521'
+)
+
+EXEC [db_utils].[library].[sp_Assert_Equals] 12,'Nombre caracter especial inicio',@ESPERADO, @OBTENIDO, NULL
