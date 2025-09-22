@@ -33,7 +33,7 @@ BEGIN
                     ( 1,                'AUTOMOVIL' ),
                     ( 2,                'CAMIONETA' )
 END
-ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Vehiculo] Ya existe en la BD: db_alquileres_vehiculos')
+ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Tipo_Vehiculo] Ya existe en la BD: db_alquileres_vehiculos')
 
 /*
 DROP TABLE  [db_alquileres_vehiculos].
