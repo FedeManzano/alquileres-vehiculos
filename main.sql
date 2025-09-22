@@ -13,6 +13,8 @@ END
 
 USE db_alquileres_vehiculos
 
+-- ALTER DATABASE db_alquileres_vehiculos ADD FILEGROUP G_MEM CONTAINS MEMORY_OPTIMIZED_DATA;
+
 IF NOT EXISTS 
 (
     SELECT 1

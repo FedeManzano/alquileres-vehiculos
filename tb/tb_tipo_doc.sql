@@ -15,7 +15,7 @@ BEGIN
                     [Tipo_Doc] 
     (
     --  NOMBRE        TIPO        RESTRCCIÓN 
-        TipoDoc       TINYINT     PRIMARY KEY,
+        TipoDoc       TINYINT     PRIMARY KEY NONCLUSTERED,
         Descripcion   VARCHAR(3)  NOT NULL,
 
         -- RESTRICCIÓN CK Pra la descripción del 
@@ -26,7 +26,7 @@ BEGIN
             Descripcion     =    'LC'   OR
             Descripcion     =    'PAS'              
         )
-    ); -- FIN CREACIÓN
+    )
 
     -- LOTE DE PRUEBA CON LOS TRES VALORES POSIBLES
     INSERT INTO     [db_alquileres_vehiculos].

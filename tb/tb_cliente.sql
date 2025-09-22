@@ -27,7 +27,7 @@ BEGIN -- COMIENZO DEL CUERPO IF
         Telefono    CHAR(14),
 
         CONSTRAINT PK_Cliente 
-            PRIMARY KEY(TipoDoc, NroDoc),
+            PRIMARY KEY NONCLUSTERED (TipoDoc, NroDoc),
 
         CONSTRAINT FK_Tipo_Doc FOREIGN KEY(TipoDoc) REFERENCES  
             [db_alquileres_vehiculos].
@@ -47,7 +47,7 @@ BEGIN -- COMIENZO DEL CUERPO IF
                 ELSE 0
             END = 1
         ),
-    );
+    )
 END 
 ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Cliente] Ya existe en la BD: db_alquileres_vehiculos')
 
@@ -55,3 +55,5 @@ ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Cliente] Ya existe en 
 DROP TABLE  [db_alquileres_vehiculos].
             [negocio].
             [Cliente] */
+
+--DROP DATABASE db_alquileres_vehiculos
