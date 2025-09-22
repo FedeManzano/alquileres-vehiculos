@@ -21,60 +21,107 @@ BEGIN
     BEGIN TRY 
         SET @RES = -1
 
-        IF NOT EXISTS
+        IF [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
         (
-            SELECT 1
-            FROM [db_alquileres_vehiculos].[negocio].[Tipo_Doc]
-            WHERE TipoDoc = @T_DOC
-        )
+            @T_DOC,
+            @NRO_DOC,
+            @NOMBRE,
+            @APELLIDO,
+            @DIRECCION,
+            @EMAIL,
+            @FNAC, 
+            @TEL
+        ) = 0
         BEGIN 
             SET @RES = 0
             RAISERROR ( 'El tipo de documento no existe', 11, 1)
         END
 
-        IF  [db_utils].
-            [library].
-            [fn_Validate_Dni] (@NRO_DOC) = 0
-        BEGIN 
-            SET @RES = 2
-            RAISERROR ( 'El nro de documento no existe', 11, 1)
-        END
 
-        IF EXISTS 
+        IF [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
         (
-            SELECT 1
-            FROM    [db_alquileres_vehiculos].
-                    [negocio]. 
-                    [Cliente]
-            WHERE   @NRO_DOC = NroDoc AND
-                    @T_DOC   = TipoDoc 
-        )
+            @T_DOC,
+            @NRO_DOC,
+            @NOMBRE,
+            @APELLIDO,
+            @DIRECCION,
+            @EMAIL,
+            @FNAC, 
+            @TEL
+        ) = 2
         BEGIN 
             SET @RES = 2
-            RAISERROR ( 'El nro de documento ya fue registrado en la BD existe', 11, 1)
+            RAISERROR ( 'Número de documento inválido', 11, 1)
         END
 
+        IF [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
+        (
+            @T_DOC,
+            @NRO_DOC,
+            @NOMBRE,
+            @APELLIDO,
+            @DIRECCION,
+            @EMAIL,
+            @FNAC, 
+            @TEL
+        ) = 3
+        BEGIN 
+            SET @RES = 3
+            RAISERROR ( 'El DNI ta se encontraba registrado', 11, 1)
+        END
+
+
+        IF [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
+        (
+            @T_DOC,
+            @NRO_DOC,
+            @NOMBRE,
+            @APELLIDO,
+            @DIRECCION,
+            @EMAIL,
+            @FNAC, 
+            @TEL
+        ) = 4
+        BEGIN 
+            SET @RES = 4
+            RAISERROR ( 'El nombre es inválido', 11, 1)
+        END
+
+        IF [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
+        (
+            @T_DOC,
+            @NRO_DOC,
+            @NOMBRE,
+            @APELLIDO,
+            @DIRECCION,
+            @EMAIL,
+            @FNAC, 
+            @TEL
+        ) = 5
+        BEGIN 
+            SET @RES = 5
+            RAISERROR ( 'El apellido es inválido', 11, 1)
+        END
+
+        IF [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
+        (
+            @T_DOC,
+            @NRO_DOC,
+            @NOMBRE,
+            @APELLIDO,
+            @DIRECCION,
+            @EMAIL,
+            @FNAC, 
+            @TEL
+        ) = 6
+        BEGIN 
+            SET @RES = 6
+            RAISERROR ( 'El email es inválido', 11, 1)
+        END
 
         SET @NOMBRE     = TRIM(@NOMBRE)
         SET @APELLIDO   = TRIM(@APELLIDO)
 
-        IF @NOMBRE LIKE '%[^a-zA-Z]%'
-        BEGIN 
-            SET @RES = 3
-            RAISERROR ( 'El nombre posee caracteres erroneos', 11, 1)
-        END
-
-        IF @APELLIDO LIKE '%[^a-zA-Z]%'
-        BEGIN 
-            SET @RES = 4
-            RAISERROR ( 'El apellido posee caracteres erroneos', 11, 1)
-        END
-
-        IF [db_utils].[library].[fn_Validate_Email](@EMAIL) = 0
-        BEGIN 
-            SET @RES = 5
-            RAISERROR ( 'El email es erroneo', 11, 1)
-        END
 
         SET @EMAIL = LOWER(@EMAIL)
 
@@ -105,8 +152,7 @@ BEGIN
                 @SEVERIDAD = ERROR_SEVERITY(),
                 @ESTADO    = ERROR_STATE()
 
-       -- SET @RES = -1
-       -- RAISERROR (@MJE_ERROR, @SEVERIDAD, @ESTADO)
+        RAISERROR (@MJE_ERROR, @SEVERIDAD, @ESTADO)
        
         IF @@ROWCOUNT > 1
             ROLLBACK TRANSACTION T_INSERTAR_CLIENTE

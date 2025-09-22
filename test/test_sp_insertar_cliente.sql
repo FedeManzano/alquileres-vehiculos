@@ -60,7 +60,7 @@ EXEC [db_utils].[library].[sp_Assert_Equals] 2,'Normal, Normalización de datos'
     ESP = -1 <=> OBT = -1
 */
 
-SET @ESPERADO = 4
+SET @ESPERADO = 5
 SET @OBTENIDO = -1
 
 EXEC 
@@ -86,7 +86,7 @@ EXEC [db_utils].[library].[sp_Assert_Equals] 3,'Fallido, Caracter especial en el
     ESP = -1 <=> OBT = -1
 */
 
-SET @ESPERADO =  3
+SET @ESPERADO =  4
 SET @OBTENIDO = -1
 
 EXEC 
@@ -105,4 +105,4 @@ EXEC [db_utils].[library].[sp_Assert_Equals] 4,'Fallido, Caracter especial en el
 
 
 SELECT * FROM [db_alquileres_vehiculos].[negocio].[Cliente]
-DELETE FROM [db_alquileres_vehiculos].[negocio].[Cliente]
+--DELETE FROM [db_alquileres_vehiculos].[negocio].[Cliente]
