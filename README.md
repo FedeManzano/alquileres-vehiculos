@@ -25,6 +25,7 @@ el nombre de los archivos están en :green_book: [db_util](/utils).
         - :open_file_folder: <b>validate</b> 
             - :page_facing_up: <i>sp_assert_equals.sql</i>
             - :page_facing_up: <i>sp_exists_element.sql</i>
+            - :page_facing_up: <i>sp_validate_cuit.sql</i>
 
 > Todos estos elementos tienen que ser creados para poder utilizar los ejercicios de prueba para aprender SQL.
 
