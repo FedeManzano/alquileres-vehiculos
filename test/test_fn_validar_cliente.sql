@@ -16,7 +16,7 @@ DECLARE @OBTENIDO INT = -1
 SET @OBTENIDO = [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
 ( 
     4, 
-    '32595830', 
+    '11111111', 
     'Federico', 
     'Manzano', 
     'B. Frione 4680 Ciudadela', 
@@ -36,7 +36,7 @@ SET @OBTENIDO = -1
 SET @OBTENIDO = [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
 ( 
     1, -- valor correcto 
-    '32595830', 
+    '11111111', 
     'Federico', 
     'Manzano', 
     'B. Frione 4680 Ciudadela', 
@@ -56,7 +56,7 @@ SET @OBTENIDO = -1
 SET @OBTENIDO = [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
 ( 
     2, -- valor correcto 
-    '32595830', 
+    '11111111', 
     'Federico', 
     'Manzano', 
     'B. Frione 4680 Ciudadela', 
@@ -77,7 +77,7 @@ SET @OBTENIDO = -1
 SET @OBTENIDO = [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
 ( 
     3, -- valor correcto 
-    '32595830', 
+    '11111111', 
     'Federico', 
     'Manzano', 
     'B. Frione 4680 Ciudadela', 
@@ -98,7 +98,7 @@ SET @OBTENIDO = -1
 SET @OBTENIDO = [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
 ( 
     0, -- valor correcto 
-    '32595830', 
+    '11111111', 
     'Federico', 
     'Manzano', 
     'B. Frione 4680 Ciudadela', 
@@ -122,7 +122,7 @@ SET @OBTENIDO = -1
 SET @OBTENIDO = [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
 ( 
     1,
-    '32595830', 
+    '11111111', 
     'Federico', 
     'Manzano', 
     'B. Frione 4680 Ciudadela', 
@@ -142,7 +142,7 @@ SET @OBTENIDO = -1
 SET @OBTENIDO = [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
 ( 
     1,
-    '32595.830', 
+    '11111.111', 
     'Federico', 
     'Manzano', 
     'B. Frione 4680 Ciudadela', 
@@ -152,3 +152,59 @@ SET @OBTENIDO = [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
 )
 
 EXEC [db_utils].[library].[sp_Assert_Equals] 6,'Nro Documento caracter especial medio',@ESPERADO, @OBTENIDO, NULL
+
+
+---- TEST 7 ---------------------------------------------------------------------------------------
+SET @ESPERADO =  2 -- SE ESPERA UN 2
+SET @OBTENIDO = -1
+
+SET @OBTENIDO = [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
+( 
+    1,
+    '.11111111', 
+    'Federico', 
+    'Manzano', 
+    'B. Frione 4680 Ciudadela', 
+    'federico@gmail.com',  
+    '1987-01-03',
+    '5401146547521'
+)
+
+EXEC [db_utils].[library].[sp_Assert_Equals] 7,'Nro Documento caracter especial inicio',@ESPERADO, @OBTENIDO, NULL
+
+---- TEST 8 ---------------------------------------------------------------------------------------
+SET @ESPERADO =  2 -- SE ESPERA UN 2
+SET @OBTENIDO = -1
+
+SET @OBTENIDO = [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
+( 
+    1,
+    ' 1111111', 
+    'Federico', 
+    'Manzano', 
+    'B. Frione 4680 Ciudadela', 
+    'federico@gmail.com',  
+    '1987-01-03',
+    '5401146547521'
+)
+
+EXEC [db_utils].[library].[sp_Assert_Equals] 8,'Nro Documento espacio inicio',@ESPERADO, @OBTENIDO, NULL
+
+
+---- TEST 9 ---------------------------------------------------------------------------------------
+SET @ESPERADO =  2 -- SE ESPERA UN 2
+SET @OBTENIDO = -1
+
+SET @OBTENIDO = [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
+( 
+    1,
+    '11 11111', 
+    'Federico', 
+    'Manzano', 
+    'B. Frione 4680 Ciudadela', 
+    'federico@gmail.com',  
+    '1987-01-03',
+    '5401146547521'
+)
+
+EXEC [db_utils].[library].[sp_Assert_Equals] 9,'Nro Documento espacio medio',@ESPERADO, @OBTENIDO, NULL
