@@ -15,8 +15,6 @@ CREATE OR ALTER FUNCTION [negocio].[fn_Validar_Cliente]
 RETURNS INT 
 AS 
 BEGIN
-
-
     IF NOT EXISTS
     (
         SELECT 1
@@ -41,7 +39,7 @@ BEGIN
     )
         RETURN 3
     
-    IF @NOMBRE LIKE '%[^a-zA-Z]%'
+    IF @NOMBRE  LIKE '%[^a-zA-Z]%'
         RETURN 4
     IF @APELLIDO LIKE '%[^a-zA-Z]%'
         RETURN 5
