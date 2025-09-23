@@ -1,6 +1,6 @@
 <mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/26.2.2 Chrome/134.0.6998.178 Electron/35.1.2 Safari/537.36" version="26.2.2">
   <diagram name="Página-1" id="_UNO_J4xBtmk6uw7NelN">
-    <mxGraphModel dx="1871" dy="626" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="2567" dy="2212" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -14,9 +14,7 @@
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="416.6725352112676" y="289" as="sourcePoint" />
             <mxPoint x="429.9999999999998" y="210" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="500" y="270" />
-            </Array>
+            <Array as="points" />
           </mxGeometry>
         </mxCell>
         <mxCell id="or5rhtH8zwJeq0Akl9gE-22" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;exitX=0.554;exitY=0.05;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitPerimeter=0;" parent="1" source="28au65Giw0Z7GbSObtOx-51" target="28au65Giw0Z7GbSObtOx-42" edge="1">
@@ -50,7 +48,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="or5rhtH8zwJeq0Akl9gE-63" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Cliente&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Cliente (Perfil perfil)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;fPago: int&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ perfil: Perfil&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ formaPago(): int&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;text-wrap-mode: nowrap;&quot;&gt;+ perfil(): Perfil&lt;/span&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="1180" y="800" width="160" height="120" as="geometry" />
+          <mxGeometry x="1081" y="-30" width="160" height="120" as="geometry" />
         </mxCell>
         <mxCell id="or5rhtH8zwJeq0Akl9gE-64" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="or5rhtH8zwJeq0Akl9gE-63" target="28au65Giw0Z7GbSObtOx-63" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
@@ -59,7 +57,7 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="or5rhtH8zwJeq0Akl9gE-65" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Empleado&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Empleado(Perfil perfil)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ cargo: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ perfil: Perfil&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp;&lt;span style=&quot;text-wrap-mode: nowrap;&quot;&gt;dameCargo&lt;/span&gt;(): int&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;text-wrap-mode: nowrap;&quot;&gt;+ perfil(): Perfil&lt;/span&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="1420" y="910" width="160" height="130" as="geometry" />
+          <mxGeometry x="1400" y="80" width="160" height="130" as="geometry" />
         </mxCell>
         <mxCell id="or5rhtH8zwJeq0Akl9gE-66" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="or5rhtH8zwJeq0Akl9gE-65" target="28au65Giw0Z7GbSObtOx-63" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
@@ -73,13 +71,11 @@
             <mxPoint x="1490" y="342" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="SV2IV4pwm3wSnCayUSO8-15" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0.999;entryY=0.162;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.388;exitY=0.978;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="28au65Giw0Z7GbSObtOx-37" edge="1">
+        <mxCell id="SV2IV4pwm3wSnCayUSO8-15" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;exitX=0.388;exitY=0.978;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.69;entryY=0.025;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="28au65Giw0Z7GbSObtOx-37" edge="1" target="28au65Giw0Z7GbSObtOx-42">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="600" y="210" as="sourcePoint" />
             <mxPoint x="539.9999999999999" y="309.99999999999994" as="targetPoint" />
-            <Array as="points">
-              <mxPoint x="560" y="220" />
-            </Array>
+            <Array as="points" />
           </mxGeometry>
         </mxCell>
         <mxCell id="SV2IV4pwm3wSnCayUSO8-50" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=-0.011;entryY=0.299;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="28au65Giw0Z7GbSObtOx-55" target="28au65Giw0Z7GbSObtOx-57" edge="1">
@@ -89,25 +85,25 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="28au65Giw0Z7GbSObtOx-37" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;Repository&amp;lt;T,K,P&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ guardar(T obj): T&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ actualizar(T obj): Optional&amp;lt;T&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ consultar(K clave): Optional&amp;lt;T&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ consultarTodos(P obj) Optional&amp;lt;List&amp;lt;T&amp;gt;&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="510" y="85" width="242" height="120" as="geometry" />
+          <mxGeometry x="560" y="-880" width="242" height="120" as="geometry" />
         </mxCell>
         <mxCell id="28au65Giw0Z7GbSObtOx-42" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;RepositoryAdapter&amp;lt;Persona, String, Perfil&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ RepositoryAdapter(&lt;span style=&quot;text-align: center;&quot;&gt;Repository&amp;lt;Persona, String, Perfil&amp;gt; repository&lt;/span&gt;)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ repository:&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;RepositorioPersonaConcreto&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ guardar(Persona obj): Bool&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ actualizar(Persona obj) : Optional&amp;lt;Persona&amp;gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ consultar(String obj): Optional&amp;lt;Persona&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ consultarTodos(Perfil perfil):&amp;nbsp; Optional&amp;lt;List&amp;lt;Persona&amp;gt;&amp;gt;&lt;/p&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="240" y="310" width="400" height="140" as="geometry" />
+          <mxGeometry x="370" y="200" width="400" height="140" as="geometry" />
         </mxCell>
         <mxCell id="28au65Giw0Z7GbSObtOx-51" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center; margin: 0px 0px 0px 4px;&quot;&gt;&lt;b&gt;GuardarPersona&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ guardar(Persona obj): Persona&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="-80" y="560" width="220" height="60" as="geometry" />
+          <mxGeometry x="-70" y="555" width="220" height="60" as="geometry" />
         </mxCell>
         <mxCell id="28au65Giw0Z7GbSObtOx-52" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ActualizarPersona&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ actualizar(Persona obj): Persona&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="150" y="562" width="230" height="60" as="geometry" />
+          <mxGeometry x="200" y="555" width="230" height="60" as="geometry" />
         </mxCell>
         <mxCell id="28au65Giw0Z7GbSObtOx-53" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ConsultarPersona&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ consultar(String dni): Optional&amp;lt; Persona&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="390" y="560" width="260" height="60" as="geometry" />
+          <mxGeometry x="500" y="555" width="260" height="60" as="geometry" />
         </mxCell>
         <mxCell id="28au65Giw0Z7GbSObtOx-54" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;ConsultarTodos&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ consultarTodos(Perfil obj): Optional&amp;lt;List&amp;lt;Persona&amp;gt;&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="664" y="560" width="310" height="60" as="geometry" />
+          <mxGeometry x="840" y="560" width="310" height="60" as="geometry" />
         </mxCell>
         <mxCell id="28au65Giw0Z7GbSObtOx-55" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;RepositoryPersonaConcreto&amp;lt;Persona, String, Perfil&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ guardar(Persona obj): Bool&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ actualizar(Persona obj): Optional&amp;lt;Persona&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ consultar(String obj): Optional&amp;lt;Persona&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ consultarTodos(Perfil perfil) :&amp;nbsp; Optional&amp;lt;List&amp;lt;Persona&amp;gt;&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="770" y="283" width="360" height="100" as="geometry" />
+          <mxGeometry x="770" y="-620" width="360" height="100" as="geometry" />
         </mxCell>
         <mxCell id="28au65Giw0Z7GbSObtOx-56" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=1;entryY=1;entryDx=0;entryDy=0;" parent="1" source="28au65Giw0Z7GbSObtOx-55" target="28au65Giw0Z7GbSObtOx-37" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
@@ -116,34 +112,31 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="28au65Giw0Z7GbSObtOx-57" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Persona&lt;/b&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;&amp;lt;&amp;lt;Abstract&amp;gt;&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Persona(DATOS)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ tipoDoc: int,&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ nroDoc: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ nombre: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ apellido: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ fechaNac: Date&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ teléfono: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ dirección: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ email: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ perfil: Perfil&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getDatos(): Todos GET&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ abstract dameCargo(): String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ abstract formaPago() : int&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ abstract damePergil(): Perfil&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="1260" y="250" width="210" height="280" as="geometry" />
+          <mxGeometry x="1241" y="-650" width="210" height="280" as="geometry" />
         </mxCell>
         <mxCell id="28au65Giw0Z7GbSObtOx-58" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Perfil&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Perfil(perfil: Bool)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ perfil: Bool&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ damePerfil(): Type&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="1560" y="337" width="160" height="100" as="geometry" />
+          <mxGeometry x="1520" y="-500" width="160" height="100" as="geometry" />
         </mxCell>
         <mxCell id="28au65Giw0Z7GbSObtOx-63" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;PersonaAdapter&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ PersonaAdapter(Datos_Padre)&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;text-wrap-mode: nowrap; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ formaPago(): int&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-wrap-mode: nowrap;&quot;&gt;+ dameCargo(): String&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-wrap-mode: nowrap;&quot;&gt;+&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-wrap-mode: nowrap;&quot;&gt;perfil(): Perfil&lt;/span&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="1265" y="600" width="200" height="120" as="geometry" />
+          <mxGeometry x="1246" y="-290" width="200" height="120" as="geometry" />
         </mxCell>
         <mxCell id="28au65Giw0Z7GbSObtOx-66" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;i&gt;&amp;lt;&amp;lt;Interface&amp;gt;&amp;gt;&lt;/i&gt;&lt;br&gt;&lt;b&gt;AlquilerRepository&amp;lt;Persona, String, Perfil, Alquiler, Vehiculo&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ registrarAlquiler(Alquiler: a, Persona: per, List&amp;lt;Vehiculo&amp;gt; :l_vehiculos): Bool&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ calcularMontoTotal(Alquiler: a): Optional&amp;lt;Alquiler&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ calcularAdicionales(Alquiler: a): double&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="2760" y="115" width="440" height="90" as="geometry" />
-        </mxCell>
-        <mxCell id="XZ3fWPShoLplsRuNpCsQ-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;AlquilerRepositorioAdapter&lt;/b&gt;&lt;b style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;lt;Persona, String, Perfil, Alquiler, Vehiculo&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;+ AlquilerRepositorioAdapter(&lt;/span&gt;&lt;span style=&quot;text-align: center; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;AlquilerRepository AlquilerRepositoryConcreto&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;)&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;GestorAlquiler:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;AlquilerRepository&amp;lt;Alquiler&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ guardar(Persona obj): Bool&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ actualizar(Persona obj) : Optional&amp;lt;Persona&amp;gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ consultar(String obj): Optional&amp;lt;Persona&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ consultarTodos(Perfil perfil):&amp;nbsp; Optional&amp;lt;List&amp;lt;Persona&amp;gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ registrarAlquiler(Alquiler: a, Persona: per, List&amp;lt;Vehiculo&amp;gt; :l_vehiculos): Bool&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ calcularMontoTotal(Alquiler: a): Optional&amp;lt;Alquiler&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ calcularAdicionales(Alquiler: a): double&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="2740" y="310" width="454" height="186" as="geometry" />
+          <mxGeometry x="2610" y="-850" width="440" height="90" as="geometry" />
         </mxCell>
         <mxCell id="XZ3fWPShoLplsRuNpCsQ-2" value="" style="endArrow=block;dashed=1;endFill=0;endSize=12;html=1;rounded=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;exitX=0.289;exitY=-0.013;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="XZ3fWPShoLplsRuNpCsQ-1" target="28au65Giw0Z7GbSObtOx-66" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="2310" y="330" as="sourcePoint" />
-            <mxPoint x="2470" y="330" as="targetPoint" />
+            <mxPoint x="2170" y="330" as="sourcePoint" />
+            <mxPoint x="2330" y="330" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="XZ3fWPShoLplsRuNpCsQ-3" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.469;exitY=1.007;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="28au65Giw0Z7GbSObtOx-66" target="XZ3fWPShoLplsRuNpCsQ-1" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="2340" y="350" as="sourcePoint" />
-            <mxPoint x="2420" y="250" as="targetPoint" />
+            <mxPoint x="2200" y="350" as="sourcePoint" />
+            <mxPoint x="2280" y="250" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="XZ3fWPShoLplsRuNpCsQ-4" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;AlquilerRepositoryConcreto&amp;nbsp;&lt;/b&gt;&lt;b style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;lt;Persona, String, Perfil, Alquiler, Vehiculo&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ registrarAlquiler(Alquiler: a, Persona: per, List&amp;lt;Vehiculo&amp;gt; :l_vehiculos): Bool&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ calcularMontoTotal(Alquiler: a): Optional&amp;lt;Alquiler&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ calcularAdicionales(Alquiler: a): double&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="1970" y="276" width="430" height="80" as="geometry" />
+          <mxGeometry x="1720" y="-624" width="430" height="80" as="geometry" />
         </mxCell>
         <mxCell id="XZ3fWPShoLplsRuNpCsQ-6" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=1.005;entryY=0.21;entryDx=0;entryDy=0;entryPerimeter=0;exitX=-0.006;exitY=0.447;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="XZ3fWPShoLplsRuNpCsQ-4" target="28au65Giw0Z7GbSObtOx-57" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
@@ -152,12 +145,15 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="XZ3fWPShoLplsRuNpCsQ-7" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Alquiler&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Alquiler(DATOS)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ nroAlquiler: int&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ estado: int&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ fechaAlq: Date&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ fechaEntrega: int&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ fechaDevolucion&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getter(): TODOS&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="2237" y="475" width="160" height="155" as="geometry" />
+          <mxGeometry x="1988" y="-420" width="160" height="155" as="geometry" />
         </mxCell>
-        <mxCell id="XZ3fWPShoLplsRuNpCsQ-8" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.003;entryY=0.561;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.003;exitY=0.65;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="XZ3fWPShoLplsRuNpCsQ-4" target="XZ3fWPShoLplsRuNpCsQ-1" edge="1">
+        <mxCell id="XZ3fWPShoLplsRuNpCsQ-8" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;exitX=1.003;exitY=0.65;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.111;entryY=0.039;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="XZ3fWPShoLplsRuNpCsQ-4" target="XZ3fWPShoLplsRuNpCsQ-1" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="2320" y="490" as="sourcePoint" />
             <mxPoint x="2480" y="490" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="2646" y="-572" />
+            </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="XZ3fWPShoLplsRuNpCsQ-9" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;exitX=0.805;exitY=0.98;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="XZ3fWPShoLplsRuNpCsQ-4" target="XZ3fWPShoLplsRuNpCsQ-7" edge="1">
@@ -167,13 +163,13 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="XZ3fWPShoLplsRuNpCsQ-11" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;b style=&quot;font-size: 12px;&quot;&gt;RepositoryAdapter&amp;nbsp;&lt;/b&gt;&lt;/h1&gt;&lt;div style=&quot;&quot;&gt;&lt;b style=&quot;&quot;&gt;Implementa todos las responsabilidades de la interfaz &amp;lt;&amp;lt;Repository&amp;gt;&amp;gt; pero sin definir el cpodigo dentro del método. Patron adapter&lt;/b&gt;&lt;/div&gt;" style="shape=note;size=20;whiteSpace=wrap;html=1;align=center;" parent="1" vertex="1">
-          <mxGeometry x="70" y="170" width="380" height="120" as="geometry" />
+          <mxGeometry x="160" y="60" width="380" height="120" as="geometry" />
         </mxCell>
         <mxCell id="XZ3fWPShoLplsRuNpCsQ-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="XZ3fWPShoLplsRuNpCsQ-11" target="XZ3fWPShoLplsRuNpCsQ-11" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="XZ3fWPShoLplsRuNpCsQ-13" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Vehiculo&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Vehiculo(DATOS)&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ patente: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ tipo: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ modelo: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ marca: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ KM: Bibint&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ agencia: Agencia&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ garaje: Garaje&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ año: int&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ precio: double&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getter(): Todos&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="2032" y="475" width="160" height="220" as="geometry" />
+          <mxGeometry x="1780" y="-440" width="160" height="220" as="geometry" />
         </mxCell>
         <mxCell id="XZ3fWPShoLplsRuNpCsQ-14" value="Use" style="endArrow=open;endSize=12;dashed=1;html=1;rounded=0;entryX=0.619;entryY=0.005;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.373;exitY=1.05;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="XZ3fWPShoLplsRuNpCsQ-4" target="XZ3fWPShoLplsRuNpCsQ-13" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
@@ -182,10 +178,10 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="XZ3fWPShoLplsRuNpCsQ-18" value="&lt;b&gt;AlquilerRepositorioAdapter&lt;/b&gt;&lt;b style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent;&quot;&gt;&amp;lt;Persona, String, Perfil, Alquiler, Vehiculo&amp;gt;&lt;/b&gt;&lt;div&gt;&lt;b style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent;&quot;&gt;&lt;br&gt;&lt;/b&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent;&quot;&gt;Implementa todos los métodos de ambas interfaces, pero para este sección del diseño sólo se necesitan las responsabilidades de Alquileres, de esta forma se pude seleccionar que vamos a implementar en :&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;b&gt;AlquilerRepositoryConcreto&amp;nbsp;&lt;/b&gt;&lt;b style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent;&quot;&gt;&amp;lt;Persona, String, Perfil, Alquiler, Vehiculo&amp;gt;&lt;/b&gt;&lt;span style=&quot;color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); background-color: transparent;&quot;&gt;&lt;/span&gt;&lt;/div&gt;" style="shape=note;size=20;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="3230" y="310" width="530" height="100" as="geometry" />
+          <mxGeometry x="2870" y="60" width="530" height="100" as="geometry" />
         </mxCell>
         <mxCell id="fWMRYJLEt82xG_EBBMbc-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Entrega&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ Id_devlucion: int&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ fecha_entrega: Date&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ fecha_devlolucion: date&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ alquiler: Alquiler&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ empleado: Empleado&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getter(): Todos&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="2237" y="870" width="160" height="140" as="geometry" />
+          <mxGeometry x="1990" y="40" width="160" height="140" as="geometry" />
         </mxCell>
         <mxCell id="fWMRYJLEt82xG_EBBMbc-2" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="1" source="XZ3fWPShoLplsRuNpCsQ-7" target="fWMRYJLEt82xG_EBBMbc-1" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
@@ -200,16 +196,16 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="fWMRYJLEt82xG_EBBMbc-4" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Agencia&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ cuit: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ email: String,&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ direccion: String&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ teléfonos: ArrayList&amp;lt;String&amp;gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ getter(): TODOS&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="1630" y="540" width="200" height="130" as="geometry" />
+          <mxGeometry x="1540" y="-150" width="200" height="130" as="geometry" />
         </mxCell>
-        <mxCell id="fWMRYJLEt82xG_EBBMbc-6" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;exitX=0.991;exitY=0.348;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="fWMRYJLEt82xG_EBBMbc-4" target="XZ3fWPShoLplsRuNpCsQ-13" edge="1">
+        <mxCell id="fWMRYJLEt82xG_EBBMbc-6" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="fWMRYJLEt82xG_EBBMbc-4" target="XZ3fWPShoLplsRuNpCsQ-13" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
             <mxPoint x="1730" y="590" as="sourcePoint" />
             <mxPoint x="1950" y="570" as="targetPoint" />
           </mxGeometry>
         </mxCell>
         <mxCell id="fWMRYJLEt82xG_EBBMbc-7" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;Garaje&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ id_garaje: int&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ direccion: Stgring&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ capacidad: int&amp;nbsp;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ ocupados: int&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ method(): Type&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
-          <mxGeometry x="2032" y="760" width="160" height="90" as="geometry" />
+          <mxGeometry x="1770" y="-145" width="160" height="90" as="geometry" />
         </mxCell>
         <mxCell id="fWMRYJLEt82xG_EBBMbc-8" value="" style="endArrow=diamondThin;endFill=1;endSize=24;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" parent="1" source="fWMRYJLEt82xG_EBBMbc-7" target="XZ3fWPShoLplsRuNpCsQ-13" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
@@ -217,32 +213,41 @@
             <mxPoint x="1970" y="680" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="_lM7bByvKK79phZFWZQy-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;RegistrarAlquiler&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ registrar(alquiler: Alquiler, persona: Persona, vehiculos: List&amp;lt;vehiculos&amp;gt;): Bool&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="2481" y="565" width="450" height="55" as="geometry" />
+        <mxCell id="_lM7bByvKK79phZFWZQy-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;RegistrarAlquiler&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+ registrar(alquiler: Alquiler, persona: Persona, vehiculos: List&amp;lt;vehiculos&amp;gt;): Bool&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="1780" y="505" width="450" height="55" as="geometry" />
         </mxCell>
-        <mxCell id="_lM7bByvKK79phZFWZQy-2" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.067;entryY=1.009;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="_lM7bByvKK79phZFWZQy-1" target="XZ3fWPShoLplsRuNpCsQ-1">
+        <mxCell id="_lM7bByvKK79phZFWZQy-2" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.067;entryY=1.009;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="_lM7bByvKK79phZFWZQy-1" target="XZ3fWPShoLplsRuNpCsQ-1" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="2400" y="330" as="sourcePoint" />
-            <mxPoint x="2560" y="330" as="targetPoint" />
+            <mxPoint x="2260" y="330" as="sourcePoint" />
+            <mxPoint x="2420" y="330" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="_lM7bByvKK79phZFWZQy-4" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CalcularMontoTotal&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ calcularMontoTotal(alquiler: Alquiler) : Optional&amp;lt;Alquiler&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="2830" y="660" width="400" height="55" as="geometry" />
+        <mxCell id="_lM7bByvKK79phZFWZQy-4" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CalcularMontoTotal&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ calcularMontoTotal(alquiler: Alquiler) : Optional&amp;lt;Alquiler&amp;gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="2605" y="505" width="400" height="55" as="geometry" />
         </mxCell>
-        <mxCell id="_lM7bByvKK79phZFWZQy-5" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.532;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.374;exitY=0.04;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="_lM7bByvKK79phZFWZQy-4" target="XZ3fWPShoLplsRuNpCsQ-1">
+        <mxCell id="_lM7bByvKK79phZFWZQy-6" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CalcularAdicionales&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ calcularAdicionales(alquiler:Alquiler): double&lt;/span&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="3350" y="507" width="390" height="53" as="geometry" />
+        </mxCell>
+        <mxCell id="_lM7bByvKK79phZFWZQy-7" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.681;entryY=0.996;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.209;exitY=0.011;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="_lM7bByvKK79phZFWZQy-6" target="XZ3fWPShoLplsRuNpCsQ-1" edge="1">
           <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="2800" y="360" as="sourcePoint" />
-            <mxPoint x="2960" y="360" as="targetPoint" />
+            <mxPoint x="2930" y="490" as="sourcePoint" />
+            <mxPoint x="3090" y="490" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="_lM7bByvKK79phZFWZQy-6" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;CalcularAdicionales&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ calcularAdicionales(alquiler:Alquiler): double&lt;/span&gt;&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" vertex="1" parent="1">
-          <mxGeometry x="3100" y="569" width="390" height="53" as="geometry" />
-        </mxCell>
-        <mxCell id="_lM7bByvKK79phZFWZQy-7" value="Extends" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;entryX=0.681;entryY=0.996;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.209;exitY=0.011;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="_lM7bByvKK79phZFWZQy-6" target="XZ3fWPShoLplsRuNpCsQ-1">
+        <mxCell id="YpRyCjuI_EH2cVhHTCmL-6" value="" style="endArrow=block;endSize=16;endFill=0;html=1;rounded=0;exitX=0.543;exitY=0.008;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="_lM7bByvKK79phZFWZQy-4" target="XZ3fWPShoLplsRuNpCsQ-1">
           <mxGeometry width="160" relative="1" as="geometry">
-            <mxPoint x="3070" y="490" as="sourcePoint" />
-            <mxPoint x="3230" y="490" as="targetPoint" />
+            <mxPoint x="2767" y="660" as="sourcePoint" />
+            <mxPoint x="2770" y="150" as="targetPoint" />
           </mxGeometry>
+        </mxCell>
+        <mxCell id="XZ3fWPShoLplsRuNpCsQ-1" value="&lt;p style=&quot;margin:0px;margin-top:4px;text-align:center;&quot;&gt;&lt;b&gt;AlquilerRepositorioAdapter&lt;/b&gt;&lt;b style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;lt;Persona, String, Perfil, Alquiler, Vehiculo&amp;gt;&lt;/b&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;&lt;span style=&quot;text-align: center;&quot;&gt;+ AlquilerRepositorioAdapter(&lt;/span&gt;&lt;span style=&quot;text-align: center; background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;AlquilerRepository AlquilerRepositoryConcreto&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;)&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin:0px;margin-left:4px;&quot;&gt;+&amp;nbsp;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;GestorAlquiler:&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255)); text-align: center;&quot;&gt;AlquilerRepository&amp;lt;Alquiler&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;hr size=&quot;1&quot; style=&quot;border-style:solid;&quot;&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ guardar(Persona obj): Bool&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ actualizar(Persona obj) : Optional&amp;lt;Persona&amp;gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ consultar(String obj): Optional&amp;lt;Persona&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ consultarTodos(Perfil perfil):&amp;nbsp; Optional&amp;lt;List&amp;lt;Persona&amp;gt;&amp;gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ registrarAlquiler(Alquiler: a, Persona: per, List&amp;lt;Vehiculo&amp;gt; :l_vehiculos): Bool&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;+ calcularMontoTotal(Alquiler: a): Optional&amp;lt;Alquiler&amp;gt;&lt;/span&gt;&lt;/p&gt;&lt;p style=&quot;margin: 0px 0px 0px 4px;&quot;&gt;+ calcularAdicionales(Alquiler: a): double&lt;/p&gt;" style="verticalAlign=top;align=left;overflow=fill;html=1;whiteSpace=wrap;" parent="1" vertex="1">
+          <mxGeometry x="2596" y="190" width="454" height="186" as="geometry" />
+        </mxCell>
+        <mxCell id="YpRyCjuI_EH2cVhHTCmL-7" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Estas cuatro clases representan SERVICIOS a los cuales se los va a utilizar a través de ENDPOINT provistos por HTTP&lt;/span&gt;&lt;/h1&gt;" style="shape=note;size=20;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="-70" y="630" width="380" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="YpRyCjuI_EH2cVhHTCmL-8" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;span style=&quot;font-size: 12px;&quot;&gt;Estas tresclases representan SERVICIOS a los cuales se los va a utilizar a través de ENDPOINT provistos por HTTP&lt;/span&gt;&lt;/h1&gt;" style="shape=note;size=20;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="1">
+          <mxGeometry x="2190" y="640" width="380" height="100" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
