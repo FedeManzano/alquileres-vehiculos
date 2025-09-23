@@ -1,6 +1,14 @@
 
 # :car: Alquileres de vehículos
 
+En el presente trábajo se desarrolla un proyecto de alquileres de vehículos con ```fines didácticos``` que tiene que ver con las ```etapas de desarrollo del Software``` y la programación en el lenguaje ```SQL```. <br>
+Todos los ejemplos desarrollados en este repositorio persiguen el objetivo de divulgación y la importancia de compartir el conocimiento, es importante la no exclusión y la valoración del trabajo ajeno. 
+<br>
+<br>
+GRACIAS. <br> 
+[Federico Manzano](https://github.com/FedeManzano)
+
+
 ## :pushpin: Requisitos previos
 
 - SQL Server 2016 o superior (recomendado)
