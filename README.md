@@ -66,7 +66,18 @@ El diagrama es el diseño de la capa de aplicación, el lenguaje programación n
 
 ![Diagrama de Clases](/db_alquileres_vehiculos/mod/diagrama-clases.png)
 
-<b style="color: red">El diagráma aún incompleto le faltan ajustes.</b>
+Las siguientes clases:
+- RegistrarPersona
+- ActualizarPersona
+- ConsultarPersona
+- ConsultarTodos
+- RegistrarAlquiler
+- CalcularMontoTotal
+- CalcularAdicionales
+
+Son servivios, a los cuales van a acceder a través de la aplicación a partir de los métodos de HTTP (GET, PUT, DELETE, POST). 
+
+> Para el ejemplo no se tuvo en cuenta el boorrado, para simplificar el diagrama, esto se debe a que es de aprendizaje, aún así es lo suficientemente escalable para que el lector de este documento lo añada si lo desea.
 
 ## :pencil2: Diseño (Tablas en la base de datos)
 
