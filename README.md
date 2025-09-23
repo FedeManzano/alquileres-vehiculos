@@ -79,6 +79,18 @@ Son servivios, a los cuales van a acceder a través de la aplicación a partir d
 
 > Para el ejemplo no se tuvo en cuenta el boorrado, para simplificar el diagrama, esto se debe a que es de aprendizaje, aún así es lo suficientemente escalable para que el lector de este documento lo añada si lo desea.
 
+## :green_book: Requisitos Funcionales (Versión reducida)
+
+1.	El sistema debe permitir el ingreso de clientes por su tipo de documento, número de documento, nombre, apellido, fecha de nacimiento, email, teléfono y medios de pago utilizados.
+2.	El sistema debe permitir eliminar uno o varios clientes a partir de su tipo y número de documento.
+3.	El sistema de permitir modificar información del cliente como la fecha de nacimiento, email, nombre, apellido y formas de pago.
+4.	El sistema debe permitir la consulta de uno o varios clientes a través de consultas interactivas.
+5.	El sistema debe permitir el registro de un alquiler con el número de alquiler, tipo y número de documento del cliente, la fecha del alquiler, el o los vehículos asignados y el monto total.
+6.	El sistema debe permitir el ingreso de vehículos con su patente, modelo, marca, agencia a la cual pertenece, garaje donde se guarda, km totales y precio unitario por alquiler del mismo.
+
+> Primera parte hace falta una actualización, proximamente se incorporarán a la lista los que restan.
+
+
 ## :pencil2: Diseño (Tablas en la base de datos)
 
 El motor seleccionado MSSQL SERVER, como se describe en los requisitos de este docmuento.
