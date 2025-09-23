@@ -43,7 +43,8 @@ BEGIN -- COMIENZO DEL CUERPO IF
         CONSTRAINT CK_Cliente_Fecha_Nac CHECK
         (
             CASE  
-                WHEN TRY_CONVERT(DATE, FNac) IS NOT NULL THEN 1
+                WHEN TRY_CONVERT(DATE, FNac) IS NOT NULL 
+                AND FNac < GETDATE() THEN 1
                 ELSE 0
             END = 1
         ),
