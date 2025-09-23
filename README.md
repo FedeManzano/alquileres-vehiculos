@@ -1,7 +1,7 @@
 
-# Alquileres de vehículos
+# :car: Alquileres de vehículos
 
-## Requisitos previos
+## :pushpin: Requisitos previos
 
 - SQL Server 2016 o superior (recomendado)
 - Permisos para crear bases de datos y objetos (funciones, procedimientos)
@@ -11,10 +11,6 @@
 Se presenta un ejercicio para gestionar los alquileres de vehículos de una determinada empresa.
 Para poder utilizar este ejemplo hay que crear las depencencias que se encuentran en la raiz de este repositorio,
 el nombre de los archivos están en :green_book: [db_util](/utils).
-
-## Diseño
-
-![Modelado](/db_alquileres_vehiculos/mod/DER.png)
 
 ## :green_book: [db_util](/utils)
 
@@ -37,7 +33,49 @@ el nombre de los archivos están en :green_book: [db_util](/utils).
 
 > Todos estos elementos tienen que ser creados para poder utilizar los ejercicios de prueba para aprender SQL.
 
-## Creación de elementos en esta BD
+## :checkered_flag: Problema a resolver
+
+En el presente documento se presentan los requerimientos para el sistema de alquileres de vehículos de la mpresa ```Viajantes```, a grandes rasgos el sistema debe permitirle a los usuarios alquilar varios ```tipos de vehículos``` por un periodo de una semana, cada alquiler tiene que ser registrado y controlado a través de funcionalidades que permitan conocer el estado de cada uno de ellos y realizar los ajustes pertinentes a los datos de manera tal que, la empresa en todo momento conozca el estado de sus vehículos distribuidos por diferentes ```agencias``` que son parte de la compañía. <br>
+Se tiene que tener en cuenta la entrega que es días posteriores al alquiler, cuando el ```cliente``` se acerca a la agencia y lo retira personalmente. Los alquileres se realizan por medios informáticos a distancia dejando un espacio de dos días para el retiro. <br>
+En la agencia, ```la persona a cargo``` le va a entregar al cliente las llaves de los vehículos alquilados y registrará la entrega de los vehículos y acreditará el monto por el alquiler ejecutado.
+Cada cliente tiene la opción de retirar más de un vehículo en un mismo alquiler y después de pasado el plazo predefinido, el mismo debe devolverlo a la agencia perteneciente a la empresa en las condiciones adecuadas, caso contrario deberá abonar un recargo por roturas y atrasos en los plazos de entrega.
+
+## :crossed_flags: Límite
+
+Desde que el cliente realiza el alquiler, hasta que el mismo realiza la devolución de el o los vehículos alquilados. 
+
+## :hammer: Alcance (Primera versión)
+
+- Gestionar clientes
+- Registrar alquileres
+- Actualizar el estado de los alquileres
+- Calcular monto total a pagar por alquiler
+- Gestionar personal de las agencias
+- Registrar entregas
+- Registrar garajes donde se guardan los vehículos
+- Calcular capacidad disponible de cada garaje
+- Gestionar vehículos
+- Calcular cantidad de KM totales del vehículo
+- Registrar medios de pago
+- Actualizar pagos
+- Controlar periódicamente el estado de la devolución
+
+## :pencil2: Diseño de clases estimado
+
+El diagrama es el diseño de la capa de aplicación, el lenguaje programación no fue seleccionado aún, pero el modelos se ajusta a cualquiera de ellos.
+
+![Diagrama de Clases](/db_alquileres_vehiculos/mod/diagrama-clases.png)
+
+<b style="color: red">El diagráma aún incompleto le faltan ajustes.</b>
+
+## :pencil2: Diseño (Tablas en la base de datos)
+
+El motor seleccionado MSSQL SERVER, como se describe en los requisitos de este docmuento.
+> El diseño de la base de datos está libre a modificaciones, a grandes rasgos el diagrama quedaría representado de la siguiente manera.
+
+![Modelado](/db_alquileres_vehiculos/mod/DER.png)
+
+## :scroll: Creación de elementos en esta BD
 
 - :green_book: <b>db_alquileres_vehiculos</b> (Crear la BD)
     - :open_file_folder: <b>fn</b>
