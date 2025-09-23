@@ -1,4 +1,12 @@
+
 # Alquileres de vehículos
+
+## Requisitos previos
+
+- SQL Server 2016 o superior (recomendado)
+- Permisos para crear bases de datos y objetos (funciones, procedimientos)
+- Cliente SQL compatible (SQL Server Management Studio, Azure Data Studio o extensión SQL para VS Code)
+- Conocimientos básicos de T-SQL
 
 Se presenta un ejercicio para gestionar los alquileres de vehículos de una determinada empresa.
 Para poder utilizar este ejemplo hay que crear las depencencias que se encuentran en la raiz de este repositorio,
