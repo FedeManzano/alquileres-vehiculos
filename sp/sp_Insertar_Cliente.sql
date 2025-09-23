@@ -19,9 +19,7 @@ BEGIN
     BEGIN TRANSACTION T_INSERTAR_CLIENTE
 
     BEGIN TRY 
-        SET @RES = -1
-
-        IF [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
+        SET @RES = [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
         (
             @T_DOC,
             @NRO_DOC,
@@ -31,110 +29,24 @@ BEGIN
             @EMAIL,
             @FNAC, 
             @TEL
-        ) = 0
-        BEGIN 
-            SET @RES = 0
+        ) 
+
+        
+
+        IF @RES = 0
             RAISERROR ( 'El tipo de documento no existe', 11, 1)
-        END
-
-
-        IF [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
-        (
-            @T_DOC,
-            @NRO_DOC,
-            @NOMBRE,
-            @APELLIDO,
-            @DIRECCION,
-            @EMAIL,
-            @FNAC, 
-            @TEL
-        ) = 2
-        BEGIN 
-            SET @RES = 2
+        IF @RES = 2
             RAISERROR ( 'Número de documento inválido', 11, 1)
-        END
-
-        IF [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
-        (
-            @T_DOC,
-            @NRO_DOC,
-            @NOMBRE,
-            @APELLIDO,
-            @DIRECCION,
-            @EMAIL,
-            @FNAC, 
-            @TEL
-        ) = 3
-        BEGIN 
-            SET @RES = 3
-            RAISERROR ( 'El DNI ta se encontraba registrado', 11, 1)
-        END
-
-
-        IF [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
-        (
-            @T_DOC,
-            @NRO_DOC,
-            @NOMBRE,
-            @APELLIDO,
-            @DIRECCION,
-            @EMAIL,
-            @FNAC, 
-            @TEL
-        ) = 4
-        BEGIN 
-            SET @RES = 4
+        IF @RES = 3
+            RAISERROR ( 'El DNI ya se encontraba registrado', 11, 1)
+        IF @RES = 4
             RAISERROR ( 'El nombre es inválido', 11, 1)
-        END
-
-        IF [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
-        (
-            @T_DOC,
-            @NRO_DOC,
-            @NOMBRE,
-            @APELLIDO,
-            @DIRECCION,
-            @EMAIL,
-            @FNAC, 
-            @TEL
-        ) = 5
-        BEGIN 
-            SET @RES = 5
+        IF @RES = 5
             RAISERROR ( 'El apellido es inválido', 11, 1)
-        END
-
-        IF [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
-        (
-            @T_DOC,
-            @NRO_DOC,
-            @NOMBRE,
-            @APELLIDO,
-            @DIRECCION,
-            @EMAIL,
-            @FNAC, 
-            @TEL
-        ) = 6
-        BEGIN 
-            SET @RES = 6
+        IF @RES = 6
             RAISERROR ( 'El email es inválido', 11, 1)
-        END
-
-
-        IF [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
-        (
-            @T_DOC,
-            @NRO_DOC,
-            @NOMBRE,
-            @APELLIDO,
-            @DIRECCION,
-            @EMAIL,
-            @FNAC, 
-            @TEL
-        ) = 7
-        BEGIN 
-            SET @RES = 7
-            RAISERROR ( 'El email ya fué registrado en la BD', 11, 1)
-        END
+        IF @RES = 7
+            RAISERROR ( 'El email ya fue registrado en la BD', 11, 1)
 
 
         SET @NOMBRE     = TRIM(@NOMBRE)
@@ -169,9 +81,7 @@ BEGIN
                 @ESTADO    = ERROR_STATE()
 
         RAISERROR (@MJE_ERROR, @SEVERIDAD, @ESTADO)
-       
-        IF @@ROWCOUNT > 1
-            ROLLBACK TRANSACTION T_INSERTAR_CLIENTE
+        ROLLBACK TRANSACTION T_INSERTAR_CLIENTE
     END CATCH
 END
 
