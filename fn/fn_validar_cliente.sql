@@ -39,9 +39,9 @@ BEGIN
     )
         RETURN 3
     
-    IF @NOMBRE  LIKE '%[^a-zA-Z]%'
+    IF @NOMBRE  LIKE '%[^a-zA-Z]%' OR LEN(@NOMBRE) > 30 OR LEN(@NOMBRE) = 0
         RETURN 4
-    IF @APELLIDO LIKE '%[^a-zA-Z]%'
+    IF @APELLIDO LIKE '%[^a-zA-Z]%' OR LEN(@APELLIDO) > 30 OR LEN(@APELLIDO) = 0
         RETURN 5
 
     IF [db_utils].[library].[fn_Validate_Email](@EMAIL) = 0

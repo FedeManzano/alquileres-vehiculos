@@ -30,9 +30,6 @@ BEGIN
             @FNAC, 
             @TEL
         ) 
-
-        
-
         IF @RES = 0
             RAISERROR ( 'El tipo de documento no existe', 11, 1)
         IF @RES = 2
@@ -47,8 +44,6 @@ BEGIN
             RAISERROR ( 'El email es inválido', 11, 1)
         IF @RES = 7
             RAISERROR ( 'El email ya fue registrado en la BD', 11, 1)
-
-
         SET @NOMBRE     = TRIM(@NOMBRE)
         SET @APELLIDO   = TRIM(@APELLIDO)
         SET @EMAIL = LOWER(@EMAIL)
