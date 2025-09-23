@@ -81,7 +81,8 @@ Desde que el cliente realiza el alquiler, hasta que el mismo realiza la devoluci
 
 ## :pencil2: Diseño de clases estimado
 
-El diagrama es el diseño de la capa de aplicación, el lenguaje programación no fue seleccionado aún, pero el modelos se ajusta a cualquiera de ellos.
+El diagrama es el diseño de la capa de aplicación, a partir de este diseño se va a elegit lenguaje de programación orientado a objetos
+es más apropiado y se ajusta mejor a las necesidades del proyecto.
 
 ![Diagrama de Clases](/db_alquileres_vehiculos/mod/diagrama-clases.png)
 
