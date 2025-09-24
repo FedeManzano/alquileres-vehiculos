@@ -21,6 +21,11 @@ Se presenta un ejercicio para gestionar los alquileres de vehículos de una dete
 Para poder utilizar este ejemplo hay que crear las depencencias que se encuentran en la raiz de este repositorio,
 el nombre de los archivos están en :green_book: [db_util](/utils).
 
+## :pushpin: Recursos
+
+- [Imágenes](https://www.freepik.es/)
+- [Mapas](https://www.google.com/maps)
+
 ## :green_book: [db_util](/utils)
 
 - :green_book: <b>db_utils</b> (Crear la BD)
