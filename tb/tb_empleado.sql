@@ -12,8 +12,7 @@ IF NOT EXISTS
     WHERE   TABLE_NAME    = 'Empleado'  AND
             TABLE_SCHEMA  = 'negocio'   
 ) -- FIN CONDICIÓN
-BEGIN -- COMIENZO DEL CUERPO IF
-    PRINT('Creando la tabla [db_alquileres_vehiculos].[negocio].[Empleado] en la BD: db_alquileres_vehiculos')  
+BEGIN -- COMIENZO DEL CUERPO IF 
     CREATE TABLE    [db_alquileres_vehiculos].
                     [negocio].
                     [Empleado] (

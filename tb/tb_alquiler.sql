@@ -81,6 +81,8 @@ BEGIN
 END
 ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Alquiler] Ya existe en la BD: db_alquileres_vehiculos')
 
+
+
 /* DROP TABLE  [db_alquileres_vehiculos].[negocio].[Alquiler] */
 -- Índices para optimizar consultas frecuentes
 -- CREATE INDEX IX_Fecha_Alquiler ON [db_alquileres_vehiculos].[negocio].[Alquiler](FAlq)

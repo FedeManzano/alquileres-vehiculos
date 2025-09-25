@@ -93,7 +93,7 @@ END
 --DELETE FROM [db_alquileres_vehiculos].[negocio].[Cliente]
 
 -- Verificación de datos cargados
-SELECT Descripcion, NroDoc, Nombre, Apellido, Email, FNac, Telefono, Direccion, MedioPago 
+SELECT Descripcion, NroDoc, Nombre, Apellido, Email, FNac, Telefono, Direccion, MedioPago , Estado
 FROM [db_alquileres_vehiculos].[negocio].[Cliente] 
 INNER JOIN [db_alquileres_vehiculos].[negocio].[Tipo_Doc] 
 ON Cliente.TipoDoc = Tipo_Doc.TipoDoc

@@ -21,6 +21,34 @@ BEGIN
         Telefono        VARCHAR(20),    -- Puede ser NULL
         Direccion       VARCHAR(100)    NOT NULL -- Dirección física de la agencia
     );
+
+    INSERT INTO [db_alquileres_vehiculos].[negocio].[Agencia] (
+        CuitAgencia,
+        Correo,
+        Nombre,
+        Telefono,
+        Direccion
+    ) VALUES (
+        '30-12345678-9',
+        'info@agenciaejemplo.com',
+        'Agencia Ejemplo',
+        '011-1234-5678',
+        'Av. Siempre Viva 123'
+    ),
+    (
+        '20-87654321-0',
+        'info@agenciaejemplo2.com',
+        'Agencia Ejemplo 2',
+        '011-8765-4321',
+        'Av. Siempre Viva 456'
+    ),
+    (
+        '23-55667788-1',
+        'info@agenciaejemplo3.com', 
+        'Agencia Ejemplo 3',
+        '011-3344-5566',
+        'Av. Siempre Viva 789'
+    )
 END
 ELSE
     -- Si la tabla ya existe, mostrar un mensaje informativo
