@@ -19,14 +19,14 @@ GRACIAS. <br>
 
 Se presenta un ejercicio para gestionar los alquileres de vehículos de una determinada empresa.
 Para poder utilizar este ejemplo hay que crear las depencencias que se encuentran en la raiz de este repositorio,
-el nombre de los archivos están en :green_book: [db_util](/utils).
+el nombre de los archivos están en :green_book: [db_util](https://github.com/FedeManzano/proyectos-sql/tree/master/utils).
 
 ## :pushpin: Recursos
 
 - [Imágenes](https://www.freepik.es/)
 - [Mapas](https://www.google.com/maps)
 
-## :green_book: [db_util](/utils)
+## :green_book: [db_util](https://github.com/FedeManzano/proyectos-sql/tree/master/utils)
 
 - :green_book: <b>db_utils</b> (Crear la BD)
     - :open_file_folder: <b>fn</b>
@@ -90,7 +90,7 @@ Desde que el cliente realiza el alquiler, hasta que el mismo realiza la devoluci
 El diagrama es el diseño de la capa de aplicación, a partir de este diseño se va a elegit lenguaje de programación orientado a objetos
 es más apropiado y se ajusta mejor a las necesidades del proyecto.
 
-![Diagrama de Clases](/db_alquileres_vehiculos/mod/diagrama-clases.png)
+![Diagrama de Clases](/mod/diagrama-clases.png)
 
 Las siguientes clases:
 - RegistrarPersona
@@ -110,7 +110,7 @@ Son servivios, a los cuales van a acceder a través de la aplicación a partir d
 El motor seleccionado MSSQL SERVER, como se describe en los requisitos de este docmuento.
 > El diseño de la base de datos está libre a modificaciones, a grandes rasgos el diagrama quedaría representado de la siguiente manera.
 
-![Modelado](/db_alquileres_vehiculos/mod/DER.png)
+![Modelado](/mod/DER.png)
 
 ## :scroll: Creación de elementos en esta BD
 
