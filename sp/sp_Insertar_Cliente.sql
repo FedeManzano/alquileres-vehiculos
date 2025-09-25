@@ -1,6 +1,27 @@
 USE db_alquileres_vehiculos
 
-
+/**
+    Procedimiento almacenado para insertar un nuevo cliente en la base de datos.
+    Realiza validaciones y formatea los datos antes de la inserción.    
+    Parámetros:
+        @T_DOC      TINYINT     - Tipo de documento (referencia a la tabla Tipo_Doc)
+        @NRO_DOC    VARCHAR(8)  - Número de documento
+        @NOMBRE     VARCHAR(30) - Nombre del cliente
+        @APELLIDO   VARCHAR(30) - Apellido del cliente
+        @DIRECCION  VARCHAR(100)- Dirección del cliente
+        @EMAIL      VARCHAR(100)- Email del cliente
+        @FNAC       DATE        - Fecha de nacimiento del cliente
+        @TEL        VARCHAR(50) - Teléfono del cliente (opcional)
+        @RES        INT OUTPUT  - Código de resultado de la operación
+            0: Tipo de documento no existe
+            1: Inserción exitosa
+            2: Número de documento inválido
+            3: DNI ya registrado
+            4: Nombre inválido
+            5: Apellido inválido
+            6: Email inválido
+            7: Email ya registrado
+*/
 GO
 CREATE OR ALTER PROCEDURE [negocio].[sp_Insertar_Cliente] 
     @T_DOC          TINYINT,

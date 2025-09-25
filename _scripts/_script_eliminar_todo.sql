@@ -1,4 +1,11 @@
 
+/**
+    Script para eliminar la base de datos y todo su contenido.
+    Útil para reiniciar el entorno de pruebas.
+    Autor: Federico M. (2024)
+*/
+
+
 USE db_alquileres_peliculas
 
 DROP TABLE IF EXISTS [db_alquileres_vehiculos].[negocio].[Agencia];

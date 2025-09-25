@@ -1,5 +1,18 @@
 USE db_alquileres_vehiculos
 
+
+/**
+    Función para validar los datos de un cliente antes de su inserción o actualización.
+    Retorna un código de resultado según la validación:
+        0: Tipo de documento no existe
+        1: Datos válidos
+        2: Número de documento inválido
+        3: DNI ya registrado
+        4: Nombre inválido
+        5: Apellido inválido
+        6: Email inválido
+        7: Email ya registrado
+*/
 GO
 CREATE OR ALTER FUNCTION [negocio].[fn_Validar_Cliente]
 (
