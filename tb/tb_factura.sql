@@ -4,7 +4,7 @@ IF NOT EXISTS
 (
     SELECT  1
     FROM    INFORMATION_SCHEMA.TABLES 
-    WHERE   TABLE_NAME      = 'Medio_Pago' AND
+    WHERE   TABLE_NAME      = 'Factura' AND
             TABLE_SCHEMA    = 'negocio'
 )   
 BEGIN 

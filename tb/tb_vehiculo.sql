@@ -19,7 +19,7 @@ BEGIN
         Patente             CHAR(7)         PRIMARY KEY,
         ID_Tipo_Vehiculo    SMALLINT        NOT NULL,
         Cuit_Agencia        VARCHAR(11)     NOT NULL,
-        ID_Garage           SMALLINT        NOT NULL,
+        ID_Garaje           SMALLINT        NOT NULL,
         Marca               VARCHAR(30)     NOT NULL,
         Modelo              VARCHAR(30)     NOT NULL,
         Año                 INT             NOT NULL,
@@ -38,10 +38,10 @@ BEGIN
                         [negocio].
                         [Agencia] (CuitAgencia),
         
-        CONSTRAINT FK_ID_Garage_Vehiculo FOREIGN KEY(ID_Garage)
+        CONSTRAINT FK_ID_Garaje_Vehiculo FOREIGN KEY(ID_Garaje)
             REFERENCES [db_alquileres_vehiculos].
                         [negocio].
-                        [Garage] (ID_Garage),
+                        [Garaje] (ID_Garaje),
 
         ------------- ****** FIN RESTRICCIONES FORANEAS ******* --------------------------------
 
@@ -56,7 +56,7 @@ BEGIN
         CONSTRAINT CK_Ano_Vehiculo CHECK 
         (
             -- EVITA VALORES MUY ALTOS EN EL CAMPO AÑO
-            Año >= 1900 AND año < 3000
+            Año >= 1900 AND Año < 3000
         ),
 
         CONSTRAINT CK_KM_Vehiculo CHECK 
