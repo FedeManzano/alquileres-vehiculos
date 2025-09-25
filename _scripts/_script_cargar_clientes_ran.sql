@@ -47,18 +47,25 @@ BEGIN
     EXEC [db_utils].[library].[sp_Date_Random]      '1980-01-01',   3,    @FNAC OUTPUT
 
 
-    DECLARE @DIR_ENTERA VARCHAR(150) = @DIRECCION + ' ' + @NRO_HOGAR
+    DECLARE @DIR_ENTERA VARCHAR(150) =      @DIRECCION + ' ' + @NRO_HOGAR
+    DECLARE @EMAIL_ENTERO VARCHAR(150) =    @EMAIL      + '@mail.com'  
 
-
-    INSERT INTO [db_alquileres_vehiculos].[negocio].[Cliente]
-
-    (   TipoDoc,    NroDoc,     Nombre,     Apellido,   Direccion,       Email,      FNac,   Telefono     ) VALUES
-    (   @T_DOC,     @NRO_DOC,   @NOMBRE,    @APELLIDO,  @DIR_ENTERA,     @EMAIL,     @FNAC,  @TEL         )
-
-
+    EXEC [db_alquileres_vehiculos].[negocio].[sp_Insertar_Cliente]
+        @T_DOC,
+        @NRO_DOC,
+        @NOMBRE,
+        @APELLIDO,
+        @DIR_ENTERA,
+        @EMAIL_ENTERO,
+        @FNAC,
+        @TEL,
+        NULL
     SET @CANTIDAD_CLIENTES = @CANTIDAD_CLIENTES + 1
 END
 
+--DELETE FROM [db_alquileres_vehiculos].[negocio].[Cliente]
+
+-- Verificación de datos cargados
 SELECT Descripcion, NroDoc, Nombre, Apellido, Email, FNac, Telefono, Direccion 
 FROM [db_alquileres_vehiculos].[negocio].[Cliente] 
 INNER JOIN [db_alquileres_vehiculos].[negocio].[Tipo_Doc] 
