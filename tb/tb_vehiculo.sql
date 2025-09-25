@@ -74,3 +74,4 @@ BEGIN
 END
 ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Vehiculo] Ya existe en la BD: db_alquileres_vehiculos')
 
+-- DROP TABLE IF EXISTS [db_alquileres_vehiculos].[negocio].[Vehiculo]
