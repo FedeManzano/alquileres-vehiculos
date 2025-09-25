@@ -33,6 +33,7 @@ CREATE OR ALTER PROCEDURE [negocio].[sp_Insertar_Cliente]
     @FNAC           DATE,
     @TEL            VARCHAR(50),
     @MED_PAGO       TINYINT,
+    @ESTADO_CLI     TINYINT,
     @RES            INT = -1 OUTPUT
 AS 
 BEGIN 
@@ -53,7 +54,8 @@ BEGIN
             @EMAIL,
             @FNAC, 
             @MED_PAGO,
-            @TEL
+            @TEL,
+            @ESTADO_CLI
         ) 
 
         -- Manejar los diferentes códigos de error devueltos por la función
@@ -90,8 +92,8 @@ BEGIN
         [db_alquileres_vehiculos].
         [negocio].
         [Cliente] 
-        (   TipoDoc,    NroDoc,     Nombre,     Apellido,   Direccion,      Email,      FNac,   Telefono, MedioPago    ) VALUES
-        (   @T_DOC,     @NRO_DOC,   @NOMBRE,    @APELLIDO,  @DIRECCION,     @EMAIL,     @FNAC,  @TEL,     @MED_PAGO    )
+        (   TipoDoc,    NroDoc,     Nombre,     Apellido,   Direccion,      Email,      FNac,   Telefono, MedioPago, Estado    ) VALUES
+        (   @T_DOC,     @NRO_DOC,   @NOMBRE,    @APELLIDO,  @DIRECCION,     @EMAIL,     @FNAC,  @TEL,     @MED_PAGO, @ESTADO_CLI )
 
         COMMIT TRANSACTION -- Confirma la transacción si todo salió bien
      

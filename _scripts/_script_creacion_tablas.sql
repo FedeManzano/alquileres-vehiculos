@@ -220,6 +220,7 @@ BEGIN -- COMIENZO DEL CUERPO IF
         FNac        DATE         NOT NULL,
         Telefono    CHAR(14),
         MedioPago   TINYINT      NOT NULL,
+        Estado      TINYINT      NOT NULL, -- 1: Activo, 2: Deuda Vencida, 3: Inactivo
 
         ----------------- ******* RESTRICCIONES ******* -----------------
         CONSTRAINT PK_Cliente 

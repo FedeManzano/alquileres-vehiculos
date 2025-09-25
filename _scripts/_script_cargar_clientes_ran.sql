@@ -18,7 +18,8 @@ DECLARE @T_DOC          TINYINT,
         @EMAIL          VARCHAR(100),
         @FNAC           DATE,
         @TEL            VARCHAR(50),
-        @MEDIO_PAGO     TINYINT
+        @MEDIO_PAGO     TINYINT,
+        @ESTADO         TINYINT
 
 -- Contador para la cantidad de clientes a generar
 DECLARE @CANTIDAD_CLIENTES INT = 0
@@ -70,7 +71,7 @@ BEGIN
     -- Construir datos compuestos
     DECLARE @DIR_ENTERA VARCHAR(150) =      @DIRECCION + ' ' + @NRO_HOGAR
     DECLARE @EMAIL_ENTERO VARCHAR(150) =    @EMAIL      + '@mail.com'  
-
+    
     -- Insertar el cliente generado utilizando el procedimiento almacenado
     EXEC [db_alquileres_vehiculos].[negocio].[sp_Insertar_Cliente]
         @T_DOC,
@@ -82,6 +83,7 @@ BEGIN
         @FNAC,
         @TEL,
         @MEDIO_PAGO,
+        1,  -- Estado: 1 (Activo)
         NULL
 
     -- Incrementar el contador de clientes generados
@@ -91,7 +93,7 @@ END
 --DELETE FROM [db_alquileres_vehiculos].[negocio].[Cliente]
 
 -- Verificación de datos cargados
-SELECT Descripcion, NroDoc, Nombre, Apellido, Email, FNac, Telefono, Direccion 
+SELECT Descripcion, NroDoc, Nombre, Apellido, Email, FNac, Telefono, Direccion, MedioPago 
 FROM [db_alquileres_vehiculos].[negocio].[Cliente] 
 INNER JOIN [db_alquileres_vehiculos].[negocio].[Tipo_Doc] 
 ON Cliente.TipoDoc = Tipo_Doc.TipoDoc

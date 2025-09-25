@@ -24,7 +24,8 @@ CREATE OR ALTER FUNCTION [negocio].[fn_Validar_Cliente]
     @EMAIL          VARCHAR(100),
     @FNAC           DATE,
     @MED_PAGO       TINYINT,
-    @TEL            VARCHAR(50)
+    @TEL            VARCHAR(50),
+    @ESTADO         TINYINT
 )
 RETURNS INT 
 AS 
@@ -79,5 +80,9 @@ BEGIN
         WHERE ID_Medio_Pago = @MED_PAGO
     )
         RETURN 8
+
+    IF @ESTADO NOT IN (1, 2, 3)
+        RETURN 9
+    
     RETURN 1
 END

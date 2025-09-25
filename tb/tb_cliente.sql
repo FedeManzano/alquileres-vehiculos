@@ -33,6 +33,7 @@ BEGIN -- COMIENZO DEL CUERPO IF
         FNac        DATE         NOT NULL,
         Telefono    CHAR(14),
         MedioPago   TINYINT      NOT NULL,
+        Estado      TINYINT      NOT NULL, -- 1: Activo, 2: Deuda Vencida, 3: Inactivo
 
         ----------------- ******* RESTRICCIONES ******* -----------------
         CONSTRAINT PK_Cliente 
@@ -60,6 +61,13 @@ BEGIN -- COMIENZO DEL CUERPO IF
                 ELSE 0
             END = 1
         ),
+
+        CONSTRAINT CK_Cliente_Estado CHECK
+        (
+            Estado = 1 OR -- Activo
+            Estado = 2 OR -- Deuda Vencida
+            Estado = 3    -- Inactivo
+        )
     )
 END 
 ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Cliente] Ya existe en la BD: db_alquileres_vehiculos')
