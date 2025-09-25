@@ -3,8 +3,8 @@ USE db_alquileres_peliculas
 IF NOT EXISTS (
     SELECT 1
     FROM INFORMATION_SCHEMA.TABLES
-    WHERE TABLE_NAME    = 'Agencia'
-      AND TABLE_SCHEMA  = 'negocio'
+    WHERE TABLE_NAME    = 'Agencia'  AND
+            TABLE_SCHEMA  = 'negocio'  
 )
 BEGIN
     CREATE TABLE [db_alquileres_vehiculos].[negocio].[Agencia] (

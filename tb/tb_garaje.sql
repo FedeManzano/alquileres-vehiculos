@@ -11,7 +11,7 @@ IF NOT EXISTS
 BEGIN 
     CREATE TABLE    [db_alquileres_vehiculos]. 
                     [negocio]. 
-                    [Garage]
+                    [Garaje]
     (
     --  NOMBRE         TIPO         RESTRICCIÓN 
         ID_Garaje      SMALLINT     IDENTITY(1,1) PRIMARY KEY,
