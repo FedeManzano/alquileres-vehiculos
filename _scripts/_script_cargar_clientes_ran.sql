@@ -17,7 +17,8 @@ DECLARE @T_DOC          TINYINT,
         @DIRECCION      VARCHAR(100),
         @EMAIL          VARCHAR(100),
         @FNAC           DATE,
-        @TEL            VARCHAR(50)
+        @TEL            VARCHAR(50),
+        @MEDIO_PAGO     TINYINT
 
 -- Contador para la cantidad de clientes a generar
 DECLARE @CANTIDAD_CLIENTES INT = 0
@@ -54,6 +55,7 @@ BEGIN
     EXEC [db_utils].[library].[sp_Str_letter_Random]    8,    1,     @APELLIDO OUTPUT
     EXEC [db_utils].[library].[sp_Str_letter_Random]    8,    1,     @DIRECCION OUTPUT
 
+    EXEC @MEDIO_PAGO = [db_utils].[library].[sp_Str_Number_Random]  1, 5, 1, NULL
 
     --  Variables auxiliares para construir datos compuestos
     DECLARE @NRO_HOGAR CHAR(4) = ''
@@ -79,6 +81,7 @@ BEGIN
         @EMAIL_ENTERO,
         @FNAC,
         @TEL,
+        @MEDIO_PAGO,
         NULL
 
     -- Incrementar el contador de clientes generados

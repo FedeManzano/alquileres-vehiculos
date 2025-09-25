@@ -32,7 +32,7 @@ BEGIN -- COMIENZO DEL CUERPO IF
         Email       VARCHAR(100) UNIQUE,
         FNac        DATE         NOT NULL,
         Telefono    CHAR(14),
-
+        MedioPago   TINYINT      NOT NULL,
 
         ----------------- ******* RESTRICCIONES ******* -----------------
         CONSTRAINT PK_Cliente 
@@ -43,7 +43,9 @@ BEGIN -- COMIENZO DEL CUERPO IF
             [db_alquileres_vehiculos].
             [negocio].
             [Tipo_Doc] (TipoDoc),
-
+        CONSTRAINT FK_Medio_Pago FOREIGN KEY(MedioPago) REFERENCES  
+            [db_alquileres_vehiculos].[negocio].[Medio_Pago] (ID_Medio_Pago),
+            
         CONSTRAINT CK_Cliente_NroDoc CHECK
         (
             LEN(NroDoc) = 8 AND

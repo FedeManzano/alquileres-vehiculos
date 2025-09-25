@@ -13,15 +13,25 @@ IF NOT EXISTS
 )
 BEGIN 
     -- Crear la tabla Medio_Pago con sus campos y restricciones
-    PRINT('Creando la tabla [db_alquileres_vehiculos].[negocio].[Medio_Pago] en la BD: db_alquileres_vehiculos')
     CREATE TABLE [db_alquileres_vehiculos].[negocio].[Medio_Pago] (
     --  NOMBRE              TOPO            RESTRICCIÓN
         ID_Medio_Pago       TINYINT         PRIMARY KEY,
         Descripcion         VARCHAR(30)     NOT NULL,
+
         CONSTRAINT CK_Descripcion_Medio_Pago CHECK (
             LEN(Descripcion) > 0 AND LEN(Descripcion) <= 30
         )
     );
+
+    INSERT INTO [db_alquileres_vehiculos].[negocio].[Medio_Pago] 
+    (   ID_Medio_Pago,     Descripcion             ) VALUES
+    (   1,                 'Efectivo'              ),
+    (   2,                 'Tarjeta de Crédito'    ),
+    (   3,                 'Tarjeta de Débito'     ),
+    (   4,                 'Transferencia Bancaria'),
+    (   5,                 'Mercado Pago'          )
+
+    
 END ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Medio_Pago] Ya existe en la BD: db_alquileres_vehiculos')
 
 -- DROP TABLE IF EXISTS [db_alquileres_vehiculos].[negocio].[Medio_Pago]

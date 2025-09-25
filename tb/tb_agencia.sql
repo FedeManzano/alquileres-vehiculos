@@ -11,7 +11,6 @@ IF NOT EXISTS (
             TABLE_SCHEMA  = 'negocio'  
 )
 BEGIN
-    PRINT('Creando la tabla [db_alquileres_vehiculos].[negocio].[Agencia] en la BD: db_alquileres_vehiculos')
     -- Crear la tabla Agencia con sus campos y restricciones
     CREATE TABLE [db_alquileres_vehiculos].[negocio].[Agencia] (
         

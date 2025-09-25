@@ -32,6 +32,7 @@ CREATE OR ALTER PROCEDURE [negocio].[sp_Insertar_Cliente]
     @EMAIL          VARCHAR(100),
     @FNAC           DATE,
     @TEL            VARCHAR(50),
+    @MED_PAGO       TINYINT,
     @RES            INT = -1 OUTPUT
 AS 
 BEGIN 
@@ -51,6 +52,7 @@ BEGIN
             @DIRECCION,
             @EMAIL,
             @FNAC, 
+            @MED_PAGO,
             @TEL
         ) 
 
@@ -69,6 +71,8 @@ BEGIN
             RAISERROR ( 'El email es inválido', 11, 1)
         IF @RES = 7
             RAISERROR ( 'El email ya fue registrado en la BD', 11, 1)
+        IF @RES = 8
+            RAISERROR ( 'El medio de pago no existe', 11, 1)
 
         -- Formatear los datos antes de la inserción
         SET @NOMBRE     = TRIM(@NOMBRE)
@@ -86,9 +90,9 @@ BEGIN
         [db_alquileres_vehiculos].
         [negocio].
         [Cliente] 
-        (   TipoDoc,    NroDoc,     Nombre,     Apellido,   Direccion,      Email,      FNac,   Telefono    ) VALUES
-        (   @T_DOC,     @NRO_DOC,   @NOMBRE,    @APELLIDO,  @DIRECCION,     @EMAIL,     @FNAC,  @TEL        )
-        
+        (   TipoDoc,    NroDoc,     Nombre,     Apellido,   Direccion,      Email,      FNac,   Telefono, MedioPago    ) VALUES
+        (   @T_DOC,     @NRO_DOC,   @NOMBRE,    @APELLIDO,  @DIRECCION,     @EMAIL,     @FNAC,  @TEL,     @MED_PAGO    )
+
         COMMIT TRANSACTION -- Confirma la transacción si todo salió bien
      
     END TRY 

@@ -12,7 +12,6 @@ IF NOT EXISTS (
       AND TABLE_SCHEMA = 'negocio'
 )
 BEGIN
-    PRINT('Creando la tabla [db_alquileres_vehiculos].[negocio].[Tipo_Vehiculo] en la BD: db_alquileres_vehiculos')
     -- Crear la tabla Tipo_Vehiculo con sus campos y restricciones
     CREATE TABLE [db_alquileres_vehiculos].[negocio].[Tipo_Vehiculo] (
     --  CAMPO             TIPO_DATO     RESTRICCIÓN

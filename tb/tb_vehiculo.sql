@@ -15,7 +15,6 @@ IF NOT EXISTS
 )
 BEGIN 
     -- Crear la tabla Vehiculo con sus campos y restricciones
-    PRINT('Creando la tabla [db_alquileres_vehiculos].[negocio].[Vehiculo] en la BD: db_alquileres_vehiculos')
     CREATE TABLE    [db_alquileres_vehiculos].
                     [negocio].
                     [Vehiculo]

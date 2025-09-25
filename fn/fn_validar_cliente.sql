@@ -23,6 +23,7 @@ CREATE OR ALTER FUNCTION [negocio].[fn_Validar_Cliente]
     @DIRECCION      VARCHAR(100),
     @EMAIL          VARCHAR(100),
     @FNAC           DATE,
+    @MED_PAGO       TINYINT,
     @TEL            VARCHAR(50)
 )
 RETURNS INT 
@@ -69,5 +70,14 @@ BEGIN
         WHERE   @EMAIL = Email
     )
         RETURN 7
+    IF NOT EXISTS
+    (   
+        SELECT 1
+        FROM    [db_alquileres_vehiculos].
+                [negocio]. 
+                [Medio_Pago]
+        WHERE ID_Medio_Pago = @MED_PAGO
+    )
+        RETURN 8
     RETURN 1
 END

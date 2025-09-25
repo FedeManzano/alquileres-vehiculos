@@ -1,6 +1,10 @@
 USE db_alquileres_vehiculos
 
-
+/**
+    Script para crear la tabla Empleado en la base de datos.
+    La tabla almacena información sobre los empleados de las agencias.
+    Autor: Federico M. (2024)
+*/  
 IF NOT EXISTS 
 (
     SELECT 1
