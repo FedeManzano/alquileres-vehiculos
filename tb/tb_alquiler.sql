@@ -24,10 +24,10 @@ BEGIN
         C_Alquiler      CHAR(10)        NOT NULL,   -- Formato: AQL-0000001
         TipoDoc         TINYINT         NOT NULL,   -- Referencia a Tipo_Doc
         NroDoc          VARCHAR(8)      NOT NULL,   -- Número de documento del cliente
-        ID_T_Vehiculo   TINYINT         NOT NULL,   -- Referencia a Tipo_Vehiculo
+        ID_T_Vehiculo   SMALLINT        NOT NULL,   -- Referencia a Tipo_Vehiculo
         Estado          TINYINT         NOT NULL,   -- 0: Activo, 1: Finalizado, 2: Cancelado
         FAlq            DATE            NOT NULL,   -- Fecha de alquiler
-        Monto_Total     DECIMAL(10,2)   NOT NULL,   -- Monto total del alquiler
+        CodFactura      CHAR(10),                   -- Referencia a Factura
 
         -- RESTRCCIÓN PRIMARY KEY
         -- Clave primaria compuesta
@@ -46,6 +46,18 @@ BEGIN
                 [db_alquileres_vehiculos].[negocio].
                 [Cliente] 
                     (TipoDoc, NroDoc),
+
+        -- Restricción check FK ID_T_Vehiculo De Tipo_Vehiculo  
+        CONSTRAINT FK_Alquiler_Tipo_Vehiculo FOREIGN KEY (ID_T_Vehiculo) REFERENCES
+                [db_alquileres_vehiculos].[negocio].
+                [Tipo_Vehiculo] 
+                    (ID_Tipo_Vehiculo),
+
+        -- Restricción check FK CodFactura De Factura
+        CONSTRAINT FK_Alquiler_Factura FOREIGN KEY (CodFactura) REFERENCES
+                [db_alquileres_vehiculos].[negocio].
+                [Factura] 
+                    (CodFactura),
         
         -- ESTADO_AQL 1 / 2 / 3 Valores posibles
         CONSTRAINT CK_Estado_Alquiler CHECK
@@ -66,21 +78,15 @@ BEGIN
                 ELSE 0
             END = 1
         ),
-
-        -- MONTO_TOTAL >= 0
-        CONSTRAINT CK_Monto_Aqlquiler CHECK 
-        (
-            Monto_Total >= 0
-        )
     );
 END
 ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Alquiler] Ya existe en la BD: db_alquileres_vehiculos')
 
-/*
-DROP TABLE  [db_alquileres_vehiculos].[negocio].[Alquiler] */
-GO
+
+/* DROP TABLE  [db_alquileres_vehiculos].[negocio].[Alquiler] */
+
 -- Índices para optimizar consultas frecuentes
-CREATE INDEX IX_Fecha_Alquiler ON [db_alquileres_vehiculos].[negocio].[Alquiler](FAlq)
+-- CREATE INDEX IX_Fecha_Alquiler ON [db_alquileres_vehiculos].[negocio].[Alquiler](FAlq)
 
 --  Índice para consultas por estado
-CREATE INDEX IX_Estado_Alquiler ON [db_alquileres_vehiculos].[negocio].[Alquiler](Estado)
+-- CREATE INDEX IX_Estado_Alquiler ON [db_alquileres_vehiculos].[negocio].[Alquiler](Estado)

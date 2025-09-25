@@ -1,4 +1,4 @@
-USE db_alquileres_peliculas
+USE db_alquileres_vehiculos
 /**
     Script para crear la tabla Agencia en la base de datos.
     La tabla almacena información sobre las agencias de alquiler de vehículos.
