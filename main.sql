@@ -34,3 +34,5 @@ IF NOT EXISTS
 BEGIN 
     EXEC('CREATE SCHEMA test')
 END 
+
+-- DROP DATABASE IF EXISTS db_alquileres_vehiculos

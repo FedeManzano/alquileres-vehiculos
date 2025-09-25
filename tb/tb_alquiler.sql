@@ -69,3 +69,9 @@ ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Alquiler] Ya existe en
 DROP TABLE  [db_alquileres_vehiculos].
             [negocio].
             [Alquiler] */
+GO
+-- Índices para optimizar consultas frecuentes
+CREATE INDEX IX_Fecha_Alquiler ON [db_alquileres_vehiculos].[negocio].[Alquiler](FAlq)
+
+--  Índice para consultas por estado
+CREATE INDEX IX_Estado_Alquiler ON [db_alquileres_vehiculos].[negocio].[Alquiler](Estado)
