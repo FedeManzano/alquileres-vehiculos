@@ -1,6 +1,10 @@
 
 USE db_alquileres_vehiculos
-
+/**
+    Script para crear la tabla Tipo_Vehiculo en la base de datos.
+    La tabla almacena los tipos de vehículos disponibles para alquiler.
+    Autor: Federico M. (2024)   
+*/
 IF NOT EXISTS (
     SELECT 1
     FROM INFORMATION_SCHEMA.TABLES
@@ -8,6 +12,8 @@ IF NOT EXISTS (
       AND TABLE_SCHEMA = 'negocio'
 )
 BEGIN
+    PRINT('Creando la tabla [db_alquileres_vehiculos].[negocio].[Tipo_Vehiculo] en la BD: db_alquileres_vehiculos')
+    -- Crear la tabla Tipo_Vehiculo con sus campos y restricciones
     CREATE TABLE [db_alquileres_vehiculos].[negocio].[Tipo_Vehiculo] (
     --  CAMPO             TIPO_DATO     RESTRICCIÓN
         ID_Tipo_Vehiculo  SMALLINT      PRIMARY KEY,

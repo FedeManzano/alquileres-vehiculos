@@ -1,5 +1,11 @@
 USE db_alquileres_vehiculos
 
+/**
+    Script para crear la tabla Alquiler en la base de datos.
+    La tabla almacena información sobre los alquileres de vehículos realizados por los clientes.
+    Autor: Federico M. (2024)
+*/
+
 IF NOT EXISTS 
 (
     SELECT 1
@@ -8,21 +14,23 @@ IF NOT EXISTS
             TABLE_SCHEMA  = 'negocio'   
 )
 BEGIN 
-
+    -- Crear la tabla Alquiler con sus campos y restricciones
+    PRINT('Creando la tabla [db_alquileres_vehiculos].[negocio].[Alquiler] en la BD: db_alquileres_vehiculos')
     CREATE TABLE    [db_alquileres_vehiculos].
                     [negocio].
                     [Alquiler] 
     (
     --  CAMPO           TIPO            RESTRCCIÓN
-        C_Alquiler      CHAR(10)        NOT NULL,
-        TipoDoc         TINYINT         NOT NULL,
-        NroDoc          VARCHAR(8)      NOT NULL,
-        ID_T_Vehiculo   TINYINT         NOT NULL,
-        Estado          TINYINT         NOT NULL,
-        FAlq            DATE            NOT NULL,
-        Monto_Total     DECIMAL(10,2)   NOT NULL,
+        C_Alquiler      CHAR(10)        NOT NULL,   -- Formato: AQL-0000001
+        TipoDoc         TINYINT         NOT NULL,   -- Referencia a Tipo_Doc
+        NroDoc          VARCHAR(8)      NOT NULL,   -- Número de documento del cliente
+        ID_T_Vehiculo   TINYINT         NOT NULL,   -- Referencia a Tipo_Vehiculo
+        Estado          TINYINT         NOT NULL,   -- 0: Activo, 1: Finalizado, 2: Cancelado
+        FAlq            DATE            NOT NULL,   -- Fecha de alquiler
+        Monto_Total     DECIMAL(10,2)   NOT NULL,   -- Monto total del alquiler
 
         -- RESTRCCIÓN PRIMARY KEY
+        -- Clave primaria compuesta
         CONSTRAINT PK_Alquiler PRIMARY KEY 
         (
             C_Alquiler,
@@ -42,9 +50,12 @@ BEGIN
         -- ESTADO_AQL 1 / 2 / 3 Valores posibles
         CONSTRAINT CK_Estado_Alquiler CHECK
         (
-            Estado = 0 OR
-            Estado = 1 OR
-            Estado = 2  
+            Estado = 0 OR -- Reservado
+            Estado = 1 OR -- Pagado
+            Estado = 2 OR -- Retirados
+            Estado = 4 OR -- Cancelado
+            Estado = 5 OR -- Devuelto
+            Estado = 6    -- Retrasado
         ),
 
         -- FECHAAQL CK Validación de fecha

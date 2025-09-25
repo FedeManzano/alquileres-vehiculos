@@ -1,5 +1,10 @@
 USE db_alquileres_vehiculos
 
+/**
+    Script para crear la tabla Factura en la base de datos.
+    La tabla almacena información sobre las facturas generadas por los alquileres de vehículos.
+    Autor: Federico M. (2024)
+*/
 IF NOT EXISTS 
 (
     SELECT  1

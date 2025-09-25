@@ -1,5 +1,12 @@
 USE db_alquileres_vehiculos
 
+
+/**
+    Script para crear la tabla Cliente en la base de datos.
+    La tabla almacena información sobre los clientes que alquilan vehículos.
+    Autor: Federico M. (2024)
+*/
+
 IF NOT EXISTS 
 (
     SELECT 1 -- Columnas

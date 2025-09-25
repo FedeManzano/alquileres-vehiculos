@@ -1,6 +1,10 @@
 
 USE db_alquileres_vehiculos
-
+/*
+    Script para crear la tabla Garaje en la base de datos.
+    La tabla almacena información sobre los garajes donde se estacionan los vehículos.
+    Autor: Federico M. (2024)
+*/
 IF NOT EXISTS 
 (
     SELECT 1

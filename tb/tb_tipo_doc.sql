@@ -1,6 +1,10 @@
 
 USE db_alquileres_vehiculos
-
+/**
+    Script para crear la tabla Tipo_Doc en la base de datos.
+    La tabla almacena información sobre los tipos de documentos de los clientes.
+    Autor: Federico M. (2024)
+*/
 IF NOT EXISTS 
 (
     SELECT 1
@@ -10,6 +14,7 @@ IF NOT EXISTS
 )
 BEGIN 
     -- CREACIÓN DE LA TABLA TIPO_DOC
+    PRINT('Creando la tabla [db_alquileres_vehiculos].[negocio].[Tipo_Doc] en la BD: db_alquileres_vehiculos')
     CREATE TABLE    [db_alquileres_vehiculos].
                     [negocio].
                     [Tipo_Doc] 

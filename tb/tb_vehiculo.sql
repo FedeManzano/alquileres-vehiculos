@@ -1,7 +1,11 @@
 
 USE db_alquileres_vehiculos
 
-
+/**
+    Script para crear la tabla Vehiculo en la base de datos.
+    La tabla almacena información sobre los vehículos disponibles para alquiler.
+    Autor: Federico M. (2024)
+*/
 IF NOT EXISTS 
 (
     SELECT  1
@@ -10,7 +14,8 @@ IF NOT EXISTS
             TABLE_SCHEMA    = 'negocio'
 )
 BEGIN 
-
+    -- Crear la tabla Vehiculo con sus campos y restricciones
+    PRINT('Creando la tabla [db_alquileres_vehiculos].[negocio].[Vehiculo] en la BD: db_alquileres_vehiculos')
     CREATE TABLE    [db_alquileres_vehiculos].
                     [negocio].
                     [Vehiculo]
