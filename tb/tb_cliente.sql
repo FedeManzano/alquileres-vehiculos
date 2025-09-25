@@ -26,9 +26,12 @@ BEGIN -- COMIENZO DEL CUERPO IF
         FNac        DATE         NOT NULL,
         Telefono    CHAR(14),
 
+
+        ----------------- ******* RESTRICCIONES ******* -----------------
         CONSTRAINT PK_Cliente 
             PRIMARY KEY NONCLUSTERED (TipoDoc, NroDoc),
 
+        ----------------- ******* RESTRICCIONES ******* -----------------
         CONSTRAINT FK_Tipo_Doc FOREIGN KEY(TipoDoc) REFERENCES  
             [db_alquileres_vehiculos].
             [negocio].
