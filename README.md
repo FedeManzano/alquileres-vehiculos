@@ -1,4 +1,9 @@
 
+<p align='center'>
+    <img src="portada/portada.jpg" 
+    style="width: 470px; height: 310px; border-radius: 15px">
+</p>
+
 # :car: Alquileres de vehículos
 
 En el presente trábajo se desarrolla un proyecto de alquileres de vehículos con ```fines didácticos``` que tiene que ver con las ```etapas de desarrollo del Software``` y la programación en el lenguaje ```SQL```. <br>
