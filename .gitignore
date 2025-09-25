@@ -1,0 +1,35 @@
+# SQL Workspace .gitignore
+# Ignore backup files
+backup/
+*.bak
+
+# Ignore VS Code settings
+.vscode/
+*.code-workspace
+
+# Ignore system files
+Thumbs.db
+.DS_Store
+sql_proyectos.code-workspace
+
+# Ignore logs
+*.log
+
+# Ignore temp files
+*.tmp
+~$*
+
+# Ignore compiled files
+*.class
+*.exe
+*.dll
+*.obj
+*.o
+
+# Ignore Python cache (if any)
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore node_modules (if any)
+node_modules/
