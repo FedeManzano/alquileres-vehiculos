@@ -183,12 +183,40 @@ BEGIN
     CREATE TABLE [db_alquileres_vehiculos].[negocio].[Agencia] (
         
     --  NOMBRECAMPO     TIPO            RESTRICCIÓN
-        CuitAgencia     VARCHAR(11)     PRIMARY KEY, -- Formato: XX-XXXXXXXX-X
+        CuitAgencia     VARCHAR(14)     PRIMARY KEY, -- Formato: XX-XXXXXXXX-X
         Correo          VARCHAR(100)    UNIQUE, -- Puede ser NULL
         Nombre          VARCHAR(30)     NOT NULL, -- Nombre de la agencia
         Telefono        VARCHAR(20),    -- Puede ser NULL
         Direccion       VARCHAR(100)    NOT NULL -- Dirección física de la agencia
     );
+
+       INSERT INTO [db_alquileres_vehiculos].[negocio].[Agencia] (
+        CuitAgencia,
+        Correo,
+        Nombre,
+        Telefono,
+        Direccion
+    ) VALUES (
+        '30123456789',
+        'info@agenciaejemplo.com',
+        'Agencia Ejemplo',
+        '01112345678',
+        'Av. Siempre Viva 123'
+    ),
+    (
+        '20-87654321-0',
+        'info@agenciaejemplo2.com',
+        'Agencia Ejemplo 2',
+        '01187654321',
+        'Av. Siempre Viva 456'
+    ),
+    (
+        '23556677881',
+        'info@agenciaejemplo3.com', 
+        'Agencia Ejemplo 3',
+        '01133445566',
+        'Av. Siempre Viva 789'
+    )
 END
 ELSE
     -- Si la tabla ya existe, mostrar un mensaje informativo
@@ -270,7 +298,7 @@ BEGIN -- COMIENZO DEL CUERPO IF
         Nombre          VARCHAR(30)     NOT NULL,
         Apellido        VARCHAR(30)     NOT NULL,  
         Email           VARCHAR(100)    UNIQUE,
-        CuitAgencia     VARCHAR(11)     NOT NULL,
+        CuitAgencia     VARCHAR(14)     NOT NULL,
 
         CONSTRAINT FK_Cuit_Agencia FOREIGN KEY (CuitAgencia) REFERENCES 
             [db_alquileres_vehiculos].

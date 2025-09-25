@@ -22,7 +22,7 @@ BEGIN -- COMIENZO DEL CUERPO IF
         Nombre          VARCHAR(30)     NOT NULL,
         Apellido        VARCHAR(30)     NOT NULL,  
         Email           VARCHAR(100)    UNIQUE,
-        CuitAgencia     VARCHAR(11)     NOT NULL,
+        CuitAgencia     VARCHAR(14)     NOT NULL,
 
         CONSTRAINT FK_Cuit_Agencia FOREIGN KEY (CuitAgencia) REFERENCES 
             [db_alquileres_vehiculos].

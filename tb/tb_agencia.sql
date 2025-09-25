@@ -15,7 +15,7 @@ BEGIN
     CREATE TABLE [db_alquileres_vehiculos].[negocio].[Agencia] (
         
     --  NOMBRECAMPO     TIPO            RESTRICCIÓN
-        CuitAgencia     VARCHAR(11)     PRIMARY KEY, -- Formato: XX-XXXXXXXX-X
+        CuitAgencia     VARCHAR(14)     PRIMARY KEY, -- Formato: XX-XXXXXXXX-X
         Correo          VARCHAR(100)    UNIQUE, -- Puede ser NULL
         Nombre          VARCHAR(30)     NOT NULL, -- Nombre de la agencia
         Telefono        VARCHAR(20),    -- Puede ser NULL
@@ -29,21 +29,21 @@ BEGIN
         Telefono,
         Direccion
     ) VALUES (
-        '30-12345678-9',
+        '30123456789',
         'info@agenciaejemplo.com',
         'Agencia Ejemplo',
-        '011-1234-5678',
+        '01112345678',
         'Av. Siempre Viva 123'
     ),
     (
-        '20-87654321-0',
+        '20876543210',
         'info@agenciaejemplo2.com',
         'Agencia Ejemplo 2',
-        '011-8765-4321',
+        '01187654321',
         'Av. Siempre Viva 456'
     ),
     (
-        '23-55667788-1',
+        '23556677881',
         'info@agenciaejemplo3.com', 
         'Agencia Ejemplo 3',
         '011-3344-5566',
