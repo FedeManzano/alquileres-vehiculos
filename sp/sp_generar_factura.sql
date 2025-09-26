@@ -28,8 +28,8 @@ BEGIN
                     Estado              <> 1
         )
 
-        IF @MONTO_TOTAL = 0
-            RETURN 0
+        IF @MONTO_TOTAL IS NULL OR @MONTO_TOTAL = 0
+            RAISERROR('El monto para la fecha solicitada es erroneo', 11, 1)
 
         DECLARE @COD_FAC CHAR(10) = ''
         EXEC [db_utils].[library].[sp_Str_Number_Random] 0, 9, 9, @COD_FAC OUTPUT
