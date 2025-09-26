@@ -9,7 +9,7 @@ USE db_alquileres_vehiculos
 GO
 CREATE OR ALTER TRIGGER [negocio].[tg_Dar_De_Baja_Cliente] 
 ON [db_alquileres_vehiculos].[negocio].[Cliente]
-INSTEAD OF DELETE 
+INSTEAD OF DELETE -- Mientras se realiza el DELETE de uno o mas clientes
 AS 
 BEGIN 
     BEGIN TRANSACTION DAR_BAJA_CLIENTE

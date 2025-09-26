@@ -1,7 +1,5 @@
 USE master 
 
-
-
 IF NOT EXISTS 
 (
     SELECT 1 
