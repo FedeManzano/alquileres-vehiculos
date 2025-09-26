@@ -98,4 +98,3 @@ FROM [db_alquileres_vehiculos].[negocio].[Cliente]
 INNER JOIN [db_alquileres_vehiculos].[negocio].[Tipo_Doc] 
 ON Cliente.TipoDoc = Tipo_Doc.TipoDoc
 
-

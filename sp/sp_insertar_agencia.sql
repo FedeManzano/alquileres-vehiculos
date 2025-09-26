@@ -1,6 +1,13 @@
-/*
-    Script: sp_insertar_agencia.sql
-    Descripción: Procedimiento almacenado para insertar una nueva agencia en la base de datos.
+/**
+    _sp_Insertar_Agencia.sql
+    Procedimiento almacenado para insertar una nueva agencia en la base de datos.   
+    Realiza validaciones y formatea los datos antes de la inserción.
+    Parámetros:
+        @CUITARGENTINA  VARCHAR(11) - CUIT de la agencia (debe ser único y válido)
+        @CORREO         VARCHAR(100)- Correo electrónico de la agencia (opcional, debe ser único si se proporciona)
+        @NOMBRE         VARCHAR(30) - Nombre de la agencia (no puede contener caracteres especiales)
+        @TELEFONO       VARCHAR(20) - Teléfono de la agencia (opcional)
+        @DIRECCION      VARCHAR(100)- Dirección de la agencia
 */
 USE db_alquileres_vehiculos;
 
@@ -38,17 +45,7 @@ BEGIN
     EXEC [db_utils].[library].[sp_Format_Title] @NOMBRE OUTPUT
     EXEC [db_utils].[library].[sp_Format_Title] @DIRECCION OUTPUT
 
-    INSERT INTO [db_alquileres_vehiculos].[negocio].[Agencia] (
-        CuitAgencia,
-        Correo,
-        Nombre,
-        Telefono,
-        Direccion
-    ) VALUES (
-        @CUITARGENTINA,
-        @CORREO,
-        @NOMBRE,
-        @TELEFONO,
-        @DIRECCION
-    )
+    INSERT INTO [db_alquileres_vehiculos].[negocio].[Agencia] 
+    (   CuitAgencia,       Correo,     Nombre,        Telefono,       Direccion   ) VALUES 
+    (   @CUITARGENTINA,    @CORREO,    @NOMBRE,       @TELEFONO,      @DIRECCION  )
 END
