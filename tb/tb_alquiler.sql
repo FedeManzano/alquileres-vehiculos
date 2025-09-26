@@ -64,9 +64,9 @@ BEGIN
             Estado = 0 OR -- Reservado
             Estado = 1 OR -- Pagado
             Estado = 2 OR -- Retirados
-            Estado = 4 OR -- Cancelado
-            Estado = 5 OR -- Devuelto
-            Estado = 6    -- Retrasado
+            Estado = 3 OR -- Cancelado
+            Estado = 4 OR -- Devuelto
+            Estado = 5    -- Retrasado
         ),
 
         -- FECHAAQL CK Validación de fecha

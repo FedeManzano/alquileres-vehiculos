@@ -25,5 +25,7 @@ EXEC [db_alquileres_vehiculos].[negocio].[sp_Generar_Factura]
 '2024-06-20',
 NULL
 
+EXEC [db_alquileres_vehiculos].[negocio].[sp_Registar_Pago] 'F723128373', NULL
+
 
 SELECT * FROM [db_alquileres_vehiculos].[negocio].[vw_Alquileres_Reservados] 

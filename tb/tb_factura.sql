@@ -16,7 +16,7 @@ BEGIN
 
     CREATE TABLE [db_alquileres_vehiculos].[negocio].[Factura] (
     --  NOMBRE              TOPO            RESTRICCIÓN
-        CodFactura          CHAR(10)        PRIMARY KEY,
+        CodFactura          CHAR(10)        PRIMARY KEY, 
         FechaFactura        DATETIME        NOT NULL,
         MontoTotal          DECIMAL(10,2)   NOT NULL,
 
