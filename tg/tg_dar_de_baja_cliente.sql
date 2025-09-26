@@ -6,7 +6,6 @@ USE db_alquileres_vehiculos
     *  DESCRIPCION: Este trigger se activa en lugar de una eliminación en la tabla Cliente.
     *  Su objetivo es cambiar el estado del cliente a inactivo (Estado = 0) en lugar de eliminarlo.
 */
-
 GO
 CREATE OR ALTER TRIGGER [negocio].[tg_Dar_De_Baja_Cliente] 
 ON [db_alquileres_vehiculos].[negocio].[Cliente]
