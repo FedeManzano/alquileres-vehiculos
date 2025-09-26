@@ -22,7 +22,7 @@ BEGIN
     --  NOMBRE              TOPO            RESTRICCIÓN    
         Patente             CHAR(7)         PRIMARY KEY,
         ID_Tipo_Vehiculo    SMALLINT        NOT NULL,
-        Cuit_Agencia        VARCHAR(11)     NOT NULL,
+        Cuit_Agencia        VARCHAR(14)     NOT NULL,
         ID_Garaje           SMALLINT        NOT NULL,
         Marca               VARCHAR(30)     NOT NULL,
         Modelo              VARCHAR(30)     NOT NULL,

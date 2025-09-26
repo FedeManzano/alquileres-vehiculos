@@ -77,82 +77,6 @@ END
 ELSE
     PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Tipo_Vehiculo] Ya existe en la BD: db_alquileres_vehiculos')
 
---- CREACION DE LA TABLA TIPO_VEHICULO ------------------------------------------------------------------
-
-IF NOT EXISTS 
-(
-    SELECT  1
-    FROM    INFORMATION_SCHEMA.TABLES 
-    WHERE   TABLE_NAME      = 'Vehiculo' AND
-            TABLE_SCHEMA    = 'negocio'
-)
-BEGIN 
-    -- Crear la tabla Vehiculo con sus campos y restricciones
-    CREATE TABLE    [db_alquileres_vehiculos].
-                    [negocio].
-                    [Vehiculo]
-    (
-    --  NOMBRE              TOPO            RESTRICCIÓN    
-        Patente             CHAR(7)         PRIMARY KEY,
-        ID_Tipo_Vehiculo    SMALLINT        NOT NULL,
-        Cuit_Agencia        VARCHAR(11)     NOT NULL,
-        ID_Garaje           SMALLINT        NOT NULL,
-        Marca               VARCHAR(30)     NOT NULL,
-        Modelo              VARCHAR(30)     NOT NULL,
-        Año                 INT             NOT NULL,
-        KmRealizados        INT             NOT NULL,
-        PrecioAlq           DECIMAL(10,2)   NOT NULL,
-        
-
-        ------------- ****** RESTRICCIONES FORANEAS ******* --------------------------------
-        CONSTRAINT FK_ID_Tipo_Vehiculo_Vehiculo FOREIGN KEY (ID_Tipo_Vehiculo)
-            REFERENCES  [db_alquileres_vehiculos].
-                        [negocio].
-                        [Tipo_Vehiculo] (ID_Tipo_Vehiculo),
-
-        CONSTRAINT FK_Cuit_Agencia_Vehiculo FOREIGN KEY(Cuit_Agencia) 
-            REFERENCES  [db_alquileres_vehiculos].
-                        [negocio].
-                        [Agencia] (CuitAgencia),
-        
-        CONSTRAINT FK_ID_Garaje_Vehiculo FOREIGN KEY(ID_Garaje)
-            REFERENCES [db_alquileres_vehiculos].
-                        [negocio].
-                        [Garaje] (ID_Garaje),
-
-        ------------- ****** FIN RESTRICCIONES FORANEAS ******* --------------------------------
-
-        ------------- ****** RESTRICCIONES CHECK ******* --------------------------------
-
-        CONSTRAINT CK_Patente_Vehiculo CHECK 
-        (
-            LEN(Patente) = 7 AND 
-            Patente LIKE '[0-9][0-9][0-9] [A-Z][A-Z][A-Z]'
-        ),
-
-        CONSTRAINT CK_Ano_Vehiculo CHECK 
-        (
-            -- EVITA VALORES MUY ALTOS EN EL CAMPO AÑO
-            Año >= 1900 AND Año < 3000
-        ),
-
-        CONSTRAINT CK_KM_Vehiculo CHECK 
-        (
-            KmRealizados >= 0
-        ), 
-
-        CONSTRAINT CK_PrecioAlq_Vehiculo CHECK 
-        (
-            PrecioAlq >= 0
-        )
-
-        ------------- ****** FIN RESTRICCIONES CHECK ******* --------------------------------
-    );
-END
-ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Vehiculo] Ya existe en la BD: db_alquileres_vehiculos')
-
-
-
 -- CREACION DE LA TABLA MEDIO_PAGO ------------------------------------------------------------------
 IF NOT EXISTS 
 (
@@ -402,6 +326,82 @@ END
 ELSE
     PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Empleado] NO existe en la BD: db_alquileres_vehiculos')
 
+
+--- CREACION DE LA TABLA TIPO_VEHICULO ------------------------------------------------------------------
+
+IF NOT EXISTS 
+(
+    SELECT  1
+    FROM    INFORMATION_SCHEMA.TABLES 
+    WHERE   TABLE_NAME      = 'Vehiculo' AND
+            TABLE_SCHEMA    = 'negocio'
+)
+BEGIN 
+    -- Crear la tabla Vehiculo con sus campos y restricciones
+    CREATE TABLE    [db_alquileres_vehiculos].
+                    [negocio].
+                    [Vehiculo]
+    (
+    --  NOMBRE              TOPO            RESTRICCIÓN    
+        Patente             CHAR(7)         PRIMARY KEY,
+        ID_Tipo_Vehiculo    SMALLINT        NOT NULL,
+        Cuit_Agencia        VARCHAR(14)     NOT NULL,
+        ID_Garaje           SMALLINT        NOT NULL,
+        Marca               VARCHAR(30)     NOT NULL,
+        Modelo              VARCHAR(30)     NOT NULL,
+        Año                 INT             NOT NULL,
+        KmRealizados        INT             NOT NULL,
+        PrecioAlq           DECIMAL(10,2)   NOT NULL,
+        
+
+        ------------- ****** RESTRICCIONES FORANEAS ******* --------------------------------
+        CONSTRAINT FK_ID_Tipo_Vehiculo_Vehiculo FOREIGN KEY (ID_Tipo_Vehiculo)
+            REFERENCES  [db_alquileres_vehiculos].
+                        [negocio].
+                        [Tipo_Vehiculo] (ID_Tipo_Vehiculo),
+
+        CONSTRAINT FK_Cuit_Agencia_Vehiculo FOREIGN KEY(Cuit_Agencia) 
+            REFERENCES  [db_alquileres_vehiculos].
+                        [negocio].
+                        [Agencia] (CuitAgencia),
+        
+        CONSTRAINT FK_ID_Garaje_Vehiculo FOREIGN KEY(ID_Garaje)
+            REFERENCES [db_alquileres_vehiculos].
+                        [negocio].
+                        [Garaje] (ID_Garaje),
+
+        ------------- ****** FIN RESTRICCIONES FORANEAS ******* --------------------------------
+
+        ------------- ****** RESTRICCIONES CHECK ******* --------------------------------
+
+        CONSTRAINT CK_Patente_Vehiculo CHECK 
+        (
+            LEN(Patente) = 7 AND 
+            Patente LIKE '[0-9][0-9][0-9] [A-Z][A-Z][A-Z]'
+        ),
+
+        CONSTRAINT CK_Ano_Vehiculo CHECK 
+        (
+            -- EVITA VALORES MUY ALTOS EN EL CAMPO AÑO
+            Año >= 1900 AND Año < 3000
+        ),
+
+        CONSTRAINT CK_KM_Vehiculo CHECK 
+        (
+            KmRealizados >= 0
+        ), 
+
+        CONSTRAINT CK_PrecioAlq_Vehiculo CHECK 
+        (
+            PrecioAlq >= 0
+        )
+
+        ------------- ****** FIN RESTRICCIONES CHECK ******* --------------------------------
+    );
+END
+ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Vehiculo] Ya existe en la BD: db_alquileres_vehiculos')
+
+
 -- CREACION DE LA TABLA ALQUILER ------------------------------------------------------------------
 IF NOT EXISTS 
 (
@@ -512,3 +512,42 @@ END
 ELSE
     PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Adicional] Ya existe en la BD: db_alquileres_vehiculos')
 
+-- CREACION DE LA TABLA ENTREGA ------------------------------------------------------------------
+IF NOT EXISTS 
+(
+    SELECT  1
+    FROM   INFORMATION_SCHEMA.TABLES  
+    WHERE  TABLE_NAME      = 'Entrega'  AND
+           TABLE_SCHEMA    = 'negocio'
+)
+BEGIN
+    CREATE TABLE    [db_alquileres_vehiculos].
+                    [negocio].
+                    [Entrega]
+    (
+    --  NOMBRE              TIPO        RESTRCCIÓN
+        NroEntrega          SMALLINT    IDENTITY(1,1) NOT NULL,
+        NroAlquiler         INT         NOT NULL,
+        TipoDocCliente      TINYINT     NOT NULL,
+        NroDocCliente       VARCHAR(8)  NOT NULL,  
+        LegajoEmpleado      INT         NOT NULL,
+        FEntrega            DATETIME    NOT NULL,
+        ID_Tipo_Vehiculo    SMALLINT    NOT NULL,
+        PatenteVehiculo     CHAR(7)     NOT NULL,
+
+        -- RESTRCCIÓN PRIMARY KEY
+        CONSTRAINT PK_Entrega PRIMARY KEY 
+        (NroEntrega, NroAlquiler, TipoDocCliente, NroDocCliente, ID_Tipo_Vehiculo, PatenteVehiculo, LegajoEmpleado, FEntrega),
+
+        -- RESTRCCIÓN FOREIGN KEY (NroAlquiler, TipoDocCliente, NroDocCliente, ID_Tipo_Vehiculo) De Alquiler
+        CONSTRAINT FK_Entrega_Alquiler FOREIGN KEY (NroAlquiler, TipoDocCliente, NroDocCliente, ID_Tipo_Vehiculo) REFERENCES
+                [db_alquileres_vehiculos].[negocio].
+                [Alquiler] 
+                    (NroAlquiler, TipoDoc, NroDoc, ID_T_Vehiculo),
+        -- RESTRCCIÓN FOREIGN KEY LegajoEmpleado De Empleado
+        CONSTRAINT FK_Entrega_Empleado FOREIGN KEY (LegajoEmpleado) REFERENCES
+                [db_alquileres_vehiculos].[negocio].
+                [Empleado] (Legajo) ON DELETE CASCADE
+    );
+END
+ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Entrega] Ya existe en la BD: db_alquileres_vehiculos')
