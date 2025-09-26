@@ -75,11 +75,23 @@ BEGIN
             WHERE   TipoDoc         =     @TIPO_DOC     AND 
                     NroDoc          =     @NRO_DOC      AND 
                     Estado        IN(2,5)                    -- Estados activos: 2 (Retirados), 6 (Retrasado)
-
         )
         BEGIN 
             SET @RES = 5
             RAISERROR('El cliente tiene vehículos de la companía en su poder, no puede reservar hasta que los devuelva',16,1)
+        END
+
+        IF 
+        (
+            SELECT COUNT(*)
+            FROM    [db_alquileres_vehiculos].[negocio].[Alquiler]
+            WHERE   TipoDoc         =     @TIPO_DOC     AND 
+                    NroDoc          =     @NRO_DOC      AND 
+                    Estado        IN      (0,1,2,5)  
+        ) >= 3
+        BEGIN 
+            SET @RES = 6
+            RAISERROR('Como regla de negocio no se permiten tener más de 3 alquileres activos',16,1)
         END
 
         -- Generación del número de alquiler
