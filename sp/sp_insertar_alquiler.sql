@@ -35,7 +35,7 @@ BEGIN
         (
             SELECT 1 
             FROM    [db_alquileres_vehiculos].[negocio].[Cliente]
-            WHERE NroDoc = @NRO_DOC
+            WHERE NroDoc = @NRO_DOC AND TipoDoc = @TIPO_DOC
         )
         BEGIN
             SET @RES = 2
@@ -66,6 +66,21 @@ BEGIN
         BEGIN 
             SET @RES = 4
             RAISERROR('Fecha de alquiler inválida',16,1)
+        END
+
+        IF EXISTS -- Validación de alquileres activos para el mismo cliente y tipo de vehículo
+        (
+            SELECT 1 
+            FROM    [db_alquileres_vehiculos].[negocio].[Alquiler]
+            WHERE   TipoDoc         =     @TIPO_DOC     AND 
+                    NroDoc          =     @NRO_DOC      AND 
+                    ID_T_Vehiculo   =     @ID_T_V       AND 
+                    Estado        IN(2,6)                    -- Estados activos: 2 (Retirados), 6 (Retrasado)
+
+        )
+        BEGIN 
+            SET @RES = 5
+            RAISERROR('El cliente tiene vehículos de la companía en su poder, no puede reservar hasta que los devuelva',16,1)
         END
 
         -- Generación del número de alquiler
