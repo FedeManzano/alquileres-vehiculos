@@ -32,6 +32,17 @@ BEGIN
     EXEC [db_utils].[library].[sp_Str_Number_Random] 0, 9, 9, @COD_FAC OUTPUT
     SET @COD_FAC = 'F' + @COD_FAC 
 
+    WHILE EXISTS 
+    (
+        SELECT 1 
+        FROM [db_alquileres_vehiculos].[negocio].[Factura] 
+        WHERE CodFactura = @COD_FAC
+    )
+    BEGIN 
+        EXEC [db_utils].[library].[sp_Str_Number_Random] 0, 9, 9, @COD_FAC OUTPUT
+        SET @COD_FAC = 'F' + @COD_FAC 
+    END
+
     INSERT INTO [db_alquileres_vehiculos].[negocio].[Factura]
     (   CodFactura,     FechaFactura,   MontoTotal  ) VALUES 
     (   @COD_FAC,       @F_ALQ,         @MONTO_TOTAL)

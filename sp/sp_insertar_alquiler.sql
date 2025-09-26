@@ -74,7 +74,6 @@ BEGIN
             FROM    [db_alquileres_vehiculos].[negocio].[Alquiler]
             WHERE   TipoDoc         =     @TIPO_DOC     AND 
                     NroDoc          =     @NRO_DOC      AND 
-                    ID_T_Vehiculo   =     @ID_T_V       AND 
                     Estado        IN(2,6)                    -- Estados activos: 2 (Retirados), 6 (Retrasado)
 
         )
@@ -97,7 +96,9 @@ BEGIN
         INSERT INTO [db_alquileres_vehiculos].[negocio].[Alquiler] 
         (   NroAlquiler,   TipoDoc,     NroDoc,     ID_T_Vehiculo,      Estado,     FAlq    ) VALUES 
         (   @NRO_ALQ,      @TIPO_DOC,   @NRO_DOC,   @ID_T_V,            0,          @F_ALQ  )
+
         SET @RES = 1 -- Indica que la operación fue exitosa
+        
         COMMIT TRANSACTION T_INSERTAR_ALQ
     END TRY 
     BEGIN CATCH 
