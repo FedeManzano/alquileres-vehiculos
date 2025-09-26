@@ -11,7 +11,6 @@ CREATE OR ALTER PROCEDURE [negocio].[sp_Insertar_Alquiler]
 @TIPO_DOC       TINYINT,
 @NRO_DOC        VARCHAR(8),
 @ID_T_V         SMALLINT,
-@ESTADO         TINYINT,
 @F_ALQ          DATE,
 @RES            INT = -1     OUTPUT
 AS 
@@ -54,8 +53,6 @@ BEGIN
             RAISERROR('Tipo de vehículo inválido',16,1)
         END
 
-        SET @ESTADO = 1 -- Estado inicial del alquiler (1 = Activo)
-
         DECLARE @VF INT =  -- Validación de la fecha de alquiler
         (
             SELECT
@@ -78,14 +75,14 @@ BEGIN
             FROM    [db_alquileres_vehiculos].[negocio].[Alquiler]
             WHERE   TipoDoc         =     @TIPO_DOC     AND 
                     NroDoc          =     @NRO_DOC      AND 
-                    ID_T_Vehiculo   =     @ID_T_V
+                    ID_T_Vehiculo   =     @ID_T_V      
         ) + 1
 
         --- Inserción del nuevo alquiler
         INSERT INTO [db_alquileres_vehiculos].[negocio].[Alquiler] 
         (   NroAlquiler,   TipoDoc,     NroDoc,     ID_T_Vehiculo,      Estado,     FAlq    ) VALUES 
-        (   @NRO_ALQ,      @TIPO_DOC,   @NRO_DOC,   @ID_T_V,            @ESTADO,    @F_ALQ  )
-
+        (   @NRO_ALQ,      @TIPO_DOC,   @NRO_DOC,   @ID_T_V,            1,          @F_ALQ  )
+        SET @RES = 1 -- Indica que la operación fue exitosa
         COMMIT TRANSACTION T_INSERTAR_ALQ
     END TRY 
     BEGIN CATCH 

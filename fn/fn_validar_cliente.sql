@@ -12,6 +12,9 @@ USE db_alquileres_vehiculos
         5: Apellido inválido
         6: Email inválido
         7: Email ya registrado
+        8: Medio de pago no existe
+        9: Estado inválido (debe ser 1, 2 o 3)
+    Autor: Federico M. (2024)
 */
 GO
 CREATE OR ALTER FUNCTION [negocio].[fn_Validar_Cliente]
