@@ -28,5 +28,5 @@ AS
         INNER JOIN  [db_alquileres_vehiculos].[negocio].[Tipo_Doc] TD      ON TD.TipoDoc = ALQ.TipoDoc 
         INNER JOIN  [db_alquileres_vehiculos].[negocio].[Tipo_Vehiculo] TV ON TV.ID_Tipo_Vehiculo = ALQ.ID_T_Vehiculo 
         INNER JOIN  [db_alquileres_vehiculos].[negocio].[Medio_Pago] MD    ON MD.ID_Medio_Pago = CLI.MedioPago
-        WHERE ALQ.Estado = 1 -- PROISORIO ES 0
+        WHERE ALQ.Estado = 0
     )
