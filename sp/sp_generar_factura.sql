@@ -54,7 +54,8 @@ BEGIN
         SET     CodFactura = @COD_FAC
         WHERE       TipoDoc             = @TIPO_DOC   AND 
                     NroDoc              = @NRO_DOC    AND 
-                    FAlq                = @F_ALQ
+                    FAlq                = @F_ALQ      AND 
+                    Estado              = 0
         COMMIT TRANSACTION T_GENERAR_FACTURA
     END TRY 
     BEGIN CATCH

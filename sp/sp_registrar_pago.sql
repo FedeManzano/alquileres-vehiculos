@@ -10,7 +10,19 @@ BEGIN
     BEGIN TRY 
         UPDATE  [db_alquileres_vehiculos].[negocio].[Alquiler]
         SET     Estado = 1 -- Pagado
-        WHERE   CodFactura = @COD_FACTURA
+        WHERE   CodFactura = @COD_FACTURA AND 
+        TipoDoc IN 
+        (
+            SELECT TipoDoc 
+            FROM [db_alquileres_vehiculos].[negocio].[Alquiler] 
+            WHERE CodFactura = @COD_FACTURA AND Estado = 0
+        ) AND 
+        NroDoc  IN 
+        (
+            SELECT NroDoc 
+            FROM [db_alquileres_vehiculos].[negocio].[Alquiler] 
+            WHERE CodFactura = @COD_FACTURA AND Estado = 0
+        ) 
         COMMIT TRANSACTION T_REG_PAGO
     END TRY
     BEGIN CATCH 
