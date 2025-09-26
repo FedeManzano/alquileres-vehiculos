@@ -96,7 +96,7 @@ BEGIN
         --- Inserción del nuevo alquiler
         INSERT INTO [db_alquileres_vehiculos].[negocio].[Alquiler] 
         (   NroAlquiler,   TipoDoc,     NroDoc,     ID_T_Vehiculo,      Estado,     FAlq    ) VALUES 
-        (   @NRO_ALQ,      @TIPO_DOC,   @NRO_DOC,   @ID_T_V,            1,          @F_ALQ  )
+        (   @NRO_ALQ,      @TIPO_DOC,   @NRO_DOC,   @ID_T_V,            0,          @F_ALQ  )
         SET @RES = 1 -- Indica que la operación fue exitosa
         COMMIT TRANSACTION T_INSERTAR_ALQ
     END TRY 

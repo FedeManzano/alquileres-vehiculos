@@ -11,7 +11,12 @@ AS
 BEGIN 
     DECLARE @MONTO_TOTAL DECIMAL(10,2) = 
     (
-        SELECT COUNT(*) * (SELECT Precio FROM [db_alquileres_vehiculos].[negocio].[Tipo_Vehiculo] WHERE ID_Tipo_Vehiculo = @ID_T_V)
+        SELECT COUNT(*) * 
+        (
+            SELECT Precio 
+            FROM [db_alquileres_vehiculos].[negocio].[Tipo_Vehiculo] 
+            WHERE ID_Tipo_Vehiculo = @ID_T_V
+        )
         FROM [db_alquileres_vehiculos].[negocio].[Alquiler]
         WHERE   TipoDoc             = @TIPO_DOC   AND 
                 NroDoc              = @NRO_DOC    AND 
