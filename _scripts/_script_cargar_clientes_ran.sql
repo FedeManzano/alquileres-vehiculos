@@ -98,5 +98,5 @@ FROM [db_alquileres_vehiculos].[negocio].[Cliente]
 INNER JOIN [db_alquileres_vehiculos].[negocio].[Tipo_Doc] 
 ON Cliente.TipoDoc = Tipo_Doc.TipoDoc
 
-DELETE FROM [db_alquileres_vehiculos].[negocio].[Cliente]
-WHERE NroDoc = '77735631'
+-- DELETE FROM [db_alquileres_vehiculos].[negocio].[Cliente]
+-- WHERE NroDoc > '10000000'  -- Eliminar clientes con NroDoc mayor a 10000000 (clientes generados aleatoriamente)

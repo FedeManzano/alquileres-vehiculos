@@ -342,7 +342,7 @@ BEGIN
                     [Alquiler] 
     (
     --  CAMPO           TIPO            RESTRCCIÓN
-        C_Alquiler      CHAR(10)        NOT NULL,   -- Formato: AQL-0000001
+        NroAlquiler     INT             NOT NULL,   -- Formato: AQL-0000001
         TipoDoc         TINYINT         NOT NULL,   -- Referencia a Tipo_Doc
         NroDoc          VARCHAR(8)      NOT NULL,   -- Número de documento del cliente
         ID_T_Vehiculo   SMALLINT        NOT NULL,   -- Referencia a Tipo_Vehiculo
@@ -354,7 +354,7 @@ BEGIN
         -- Clave primaria compuesta
         CONSTRAINT PK_Alquiler PRIMARY KEY 
         (
-            C_Alquiler,
+            NroAlquiler,
             TipoDoc,
             NroDoc,
             ID_T_Vehiculo
