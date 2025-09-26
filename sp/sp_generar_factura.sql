@@ -5,6 +5,7 @@ CREATE OR ALTER PROCEDURE [negocio].[sp_Generar_Factura]
 @TIPO_DOC       TINYINT,
 @NRO_DOC        VARCHAR(8),
 @F_ALQ          DATE,
+@COD_FAC        CHAR(10),
 @RES            INT     OUTPUT
 AS 
 BEGIN 
@@ -32,9 +33,6 @@ BEGIN
             SET @RES = 2
             RAISERROR('El monto para la fecha solicitada es erroneo', 16, 1)
         END
-            
-        DECLARE @COD_FAC CHAR(10) = [negocio].[fn_Generar_Cod_Factura](@NRO_DOC)
-        
 
         INSERT INTO [db_alquileres_vehiculos].[negocio].[Factura]
         (   CodFactura,     FechaFactura,   MontoTotal  ) VALUES 
