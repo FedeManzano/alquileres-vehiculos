@@ -13,10 +13,7 @@ IF NOT EXISTS
             TABLE_SCHEMA  = 'negocio'   
 ) -- FIN CONDICIÓN
 BEGIN -- COMIENZO DEL CUERPO IF 
-    CREATE TABLE    [db_alquileres_vehiculos].
-                    [negocio].
-                    [Empleado] (
-                    
+    CREATE TABLE    [db_alquileres_vehiculos].[negocio].[Empleado] (
     --  Nombre          Tipo            Restricción
         Legajo          INT             IDENTITY(1,1) PRIMARY KEY,
         Nombre          VARCHAR(30)     NOT NULL,
