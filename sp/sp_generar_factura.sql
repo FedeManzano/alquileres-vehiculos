@@ -24,8 +24,8 @@ BEGIN
             FROM [db_alquileres_vehiculos].[negocio].[Alquiler]
             WHERE   TipoDoc             = @TIPO_DOC   AND 
                     NroDoc              = @NRO_DOC    AND 
-                    ID_T_Vehiculo       = @ID_T_V     AND 
-                    FAlq                = @F_ALQ
+                    FAlq                = @F_ALQ      AND 
+                    Estado              <> 1
         )
 
         IF @MONTO_TOTAL = 0
@@ -54,7 +54,6 @@ BEGIN
         SET     CodFactura = @COD_FAC
         WHERE       TipoDoc             = @TIPO_DOC   AND 
                     NroDoc              = @NRO_DOC    AND 
-                    ID_T_Vehiculo       = @ID_T_V     AND 
                     FAlq                = @F_ALQ
         COMMIT TRANSACTION T_GENERAR_FACTURA
     END TRY 
