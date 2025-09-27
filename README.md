@@ -1,7 +1,7 @@
 
 <p align='center'>
     <img src="portada/portada.png" 
-    style="width: 400px; height: 310px; border-radius: 15px">
+    style="width: 380px; height: 310px; border-radius: 15px">
 </p>
 
 # :car: Alquileres de vehículos
