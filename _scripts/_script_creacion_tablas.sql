@@ -23,7 +23,7 @@ BEGIN
     CREATE TABLE    [db_alquileres_vehiculos].[negocio].[Tipo_Doc] 
     (
     --  NOMBRE        TIPO        RESTRCCIÓN 
-        TipoDoc       TINYINT     PRIMARY KEY NONCLUSTERED,
+        TipoDoc       TINYINT     PRIMARY KEY,
         Descripcion   VARCHAR(3)  NOT NULL,
 
         -- RESTRICCIÓN CK Pra la descripción del 
@@ -428,7 +428,7 @@ BEGIN
 
         -- RESTRCCIÓN PRIMARY KEY
         -- Clave primaria compuesta
-        CONSTRAINT PK_Alquiler PRIMARY KEY NONCLUSTERED
+        CONSTRAINT PK_Alquiler PRIMARY KEY
         (
             NroAlquiler,
             TipoDoc,
@@ -478,7 +478,7 @@ BEGIN
     );
 
     -- Índices para optimizar consultas frecuentes
-    CREATE CLUSTERED INDEX IX_Fecha_CodFactura ON [db_alquileres_vehiculos].[negocio].[Alquiler](CodFactura)  
+    -- CREATE CLUSTERED INDEX IX_Fecha_CodFactura ON [db_alquileres_vehiculos].[negocio].[Alquiler](CodFactura)  
 
 END
 ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Alquiler] Ya existe en la BD: db_alquileres_vehiculos')
