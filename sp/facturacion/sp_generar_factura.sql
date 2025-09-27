@@ -51,7 +51,7 @@ BEGIN
             
             SET @COD_FAC = 
             (
-                SELECT CodFactura
+                SELECT TOP (1)CodFactura
                 FROM  [db_alquileres_vehiculos].[negocio].[Alquiler]
                 WHERE   TipoDoc             = @TIPO_DOC   AND 
                         NroDoc              = @NRO_DOC    AND 

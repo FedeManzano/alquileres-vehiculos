@@ -1,31 +1,76 @@
 USE db_alquileres_vehiculos
 
 
---SELECT * FROM [db_alquileres_vehiculos].[negocio].[Cliente]
+DECLARE @CLIENTES TABLE 
+(
+    ID INT IDENTITY(1,1)    PRIMARY KEY,
+    TipoDoc                 TINYINT NOT NULL,
+    NroDoc                  VARCHAR(8) NOT NULL
+)
 
-EXEC [db_alquileres_vehiculos].[negocio].[sp_Insertar_Alquiler] 1, '68338079', 2, '2025-09-21', NULL 
-EXEC [db_alquileres_vehiculos].[negocio].[sp_Insertar_Alquiler] 1, '68338079', 1, '2025-09-21', NULL
-EXEC [db_alquileres_vehiculos].[negocio].[sp_Insertar_Alquiler] 1, '68338079', 1, '2025-09-23', NULL
--- EXEC [db_alquileres_vehiculos].[negocio].[sp_Insertar_Alquiler] 1, '22527701', 1, '2025-09-21', NULL
+INSERT INTO @CLIENTES(TipoDoc, NroDoc)
+SELECT TipoDoc, NroDoc
+FROM [db_alquileres_vehiculos].[negocio].[Cliente]
+DECLARE @SELECTOR_CLIENTE_RND INT = -1 -- SELECCIONAR CLIENTE RANDOM
 
--- CREAR EL COD FACT
-DECLARE @CF CHAR(10)
-EXEC [db_alquileres_vehiculos].[negocio].[sp_Generar_Codigo_Factura] @CF OUTPUT
+--- TEST ALQUILERES DE VEHÍCULOS ----------------------------------------------------------------------------------
 
-EXEC [db_alquileres_vehiculos].[negocio].[sp_Generar_Factura] 1, '68338079', '2025-09-21', @CF,  NULL
-EXEC [db_alquileres_vehiculos].[negocio].[sp_Registar_Pago] 'F262918572', NULL
+--------- TEST 1 Cliente hace un alquiler y queda la factura sin pagar -----------------------------------------------
 
-SELECT *
-FROM [db_alquileres_vehiculos].[negocio].[Factura] 
-/*
-SELECT NroAlquiler, TipoDoc, NroDoc, ID_T_Vehiculo, Estado, FAlq, CodFactura,
-COUNT(*) OVER (PARTITION BY CodFactura) AS CANT_AUTOS_POR_ALQUILER 
-FROM [db_alquileres_vehiculos].[negocio].[Alquiler] 
+BEGIN TRANSACTION T_TEST_1
+BEGIN TRY 
+    
+    DECLARE @TIPO_DOC_TEST1 TINYINT     = 2 
+    DECLARE @NRO_DOC_TEST1  VARCHAR(8)  = 
+    (
+        SELECT TOP(1) NroDoc
+        FROM [db_alquileres_vehiculos].[negocio].[Cliente]
+        WHERE TipoDoc = @TIPO_DOC_TEST1
+    ) 
 
-SELECT CodFactura,TipoDoc,NroDoc, COUNT(*) CANT_TIPOS_ALQUILADOS
-FROM [db_alquileres_vehiculos].[negocio].[Alquiler] 
-GROUP BY CodFactura, NroDoc, TipoDoc
-*/
+   -- SELECT * FROM [db_alquileres_vehiculos].[negocio].[Cliente] WHERE TipoDoc = 2 AND NroDoc = @NRO_DOC_TEST1
 
---SELECT * FROM [db_alquileres_vehiculos].[negocio].[Factura] 
---SELECT * FROM [db_alquileres_vehiculos].[negocio].[vw_Alquileres_Pagados] 
+    DECLARE @TIPO_VEH_TEST1 TINYINT     = 1 -- AUTOS
+    DECLARE @F_ALQ_TEST1    DATE        = '2025-09-25' -- FECHA ANTERIOR A LA ACTUAL - correcta
+
+    DECLARE @RES_TEST1      INT         = -1        
+
+    EXEC [db_alquileres_vehiculos].[negocio].[sp_Insertar_Alquiler] 
+    @TIPO_DOC_TEST1, @NRO_DOC_TEST1, @TIPO_VEH_TEST1, @F_ALQ_TEST1, @RES_TEST1 OUTPUT
+
+    IF @RES_TEST1 <> 1
+        ROLLBACK
+
+    DECLARE @CF_TEST1 CHAR(10)
+    EXEC [db_alquileres_vehiculos].[negocio].[sp_Generar_Codigo_Factura] @CF_TEST1 OUTPUT
+
+    EXEC [db_alquileres_vehiculos].[negocio].[sp_Generar_Factura] 
+    @TIPO_DOC_TEST1, @NRO_DOC_TEST1, @F_ALQ_TEST1, @CF_TEST1,  @RES_TEST1 OUTPUT
+
+    SELECT 
+        CASE @RES_TEST1 
+            WHEN 0 THEN 'El alquiler ya dispone de factura'
+            WHEN 1 THEN 'OK TERMINO BIEN'
+            WHEN 2 THEN 'El monto para la fecha solicitada es erroneo'
+        END
+    COMMIT TRANSACTION T_TEST1 
+
+END TRY
+BEGIN CATCH
+        SELECT CASE @RES_TEST1 
+            WHEN 0 THEN 'El alquiler ya dispone de factura'
+            WHEN 1 THEN 'OK TERMINO BIEN'
+            WHEN 2 THEN 'El monto para la fecha solicitada es erroneo'
+        END
+    ROLLBACK TRANSACTION T_TEST1
+END CATCH
+
+-- SELECT * FROM [db_alquileres_vehiculos].[negocio].[Alquiler]
+-- SELECT * FROM [db_alquileres_vehiculos].[negocio].[Cliente]
+-- SELECT * FROM [db_alquileres_vehiculos].[negocio].[Factura] 
+-- SELECT * FROM [db_alquileres_vehiculos].[negocio].[vw_Alquileres_Pagados]
+
+
+-- *************************************************************************************************************
+---------------------------- FIN TEST 1 ------------------------------------------------------------------------
+-- *************************************************************************************************************
