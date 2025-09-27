@@ -1,6 +1,6 @@
 
 <p align='center'>
-    <img src="portada/portada.jpg" 
+    <img src="portada/portada.png" 
     style="width: 470px; height: 310px; border-radius: 15px">
 </p>
 
