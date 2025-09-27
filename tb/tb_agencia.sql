@@ -16,7 +16,7 @@ BEGIN
         
     --  NOMBRECAMPO     TIPO            RESTRICCIÓN
         CuitAgencia     VARCHAR(14)     PRIMARY KEY, -- Formato: XX-XXXXXXXX-X
-        Correo          VARCHAR(100)    UNIQUE, -- Puede ser NULL
+        Correo          VARCHAR(100)    UNIQUE, -- No Puede ser NULL
         Nombre          VARCHAR(30)     NOT NULL, -- Nombre de la agencia
         Telefono        VARCHAR(20),    -- Puede ser NULL
         Direccion       VARCHAR(100)    NOT NULL -- Dirección física de la agencia

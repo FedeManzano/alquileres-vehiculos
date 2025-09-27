@@ -31,16 +31,7 @@ BEGIN
             Descripcion     =    'LC'   OR
             Descripcion     =    'PAS'              
         )
-    )
-
-    -- LOTE DE PRUEBA CON LOS TRES VALORES POSIBLES
-    INSERT INTO     [db_alquileres_vehiculos].
-                    [negocio].
-                    [Tipo_Doc] 
-                    ( TipoDoc, Descripcion ) VALUES 
-                    ( 1,      'DNI'        ),
-                    ( 2,      'LC'         ),
-                    ( 3,      'PAS'        )                    
+    )                  
 END 
 ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Tipo_Doc] Ya existe en la BD: db_alquileres_vehiculos')
 

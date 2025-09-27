@@ -13,7 +13,7 @@ USE db_alquileres_vehiculos;
 
 GO 
 CREATE OR ALTER PROCEDURE [negocio].[sp_Insertar_Agencia]
-    @CUITARGENTINA VARCHAR(11),
+    @CUITARGENTINA      VARCHAR(14),
     @CORREO             VARCHAR(100) = NULL,
     @NOMBRE             VARCHAR(30),
     @TELEFONO           VARCHAR(20) = NULL,
