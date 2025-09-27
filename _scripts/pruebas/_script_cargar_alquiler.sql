@@ -20,15 +20,10 @@ DECLARE @SELECTOR_CLIENTE_RND INT = -1 -- SELECCIONAR CLIENTE RANDOM
 BEGIN TRANSACTION T_TEST_1
 BEGIN TRY 
     
-    DECLARE @TIPO_DOC_TEST1 TINYINT     = 2 
-    DECLARE @NRO_DOC_TEST1  VARCHAR(8)  = 
-    (
-        SELECT TOP(1) NroDoc
-        FROM [db_alquileres_vehiculos].[negocio].[Cliente]
-        WHERE TipoDoc = @TIPO_DOC_TEST1
-    ) 
+    EXEC @SELECTOR_CLIENTE_RND = [db_utils].[library].[sp_Str_Number_Random] 1, 9, 3, NULL
 
-   -- SELECT * FROM [db_alquileres_vehiculos].[negocio].[Cliente] WHERE TipoDoc = 2 AND NroDoc = @NRO_DOC_TEST1
+    DECLARE @TIPO_DOC_TEST1 TINYINT     = (SELECT TipoDoc FROM @CLIENTES WHERE ID =  @SELECTOR_CLIENTE_RND)
+    DECLARE @NRO_DOC_TEST1  VARCHAR(8)  = (SELECT NroDoc FROM @CLIENTES WHERE ID =  @SELECTOR_CLIENTE_RND)
 
     DECLARE @TIPO_VEH_TEST1 TINYINT     = 1 -- AUTOS
     DECLARE @F_ALQ_TEST1    DATE        = '2025-09-25' -- FECHA ANTERIOR A LA ACTUAL - correcta
