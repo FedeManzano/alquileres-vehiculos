@@ -1,7 +1,7 @@
 USE db_alquileres_vehiculos
 
 GO
-CREATE OR ALTER VIEW [negocio].[vw_Alquileres_Pagados] 
+CREATE OR ALTER VIEW [negocio].[vw_Alquileres_Entregados] 
 AS 
     (
         SELECT  FAC.CodFactura      CODIGO_FACTURA, 

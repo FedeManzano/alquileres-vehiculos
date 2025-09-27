@@ -1,7 +1,7 @@
 USE db_alquileres_vehiculos
 
 GO
-CREATE OR ALTER VIEW [negocio].[vw_Alquileres_Pagados] 
+CREATE OR ALTER VIEW [negocio].[vw_Alquileres_Cancelados] 
 AS 
     (
         SELECT  FAC.CodFactura      CODIGO_FACTURA, 
@@ -30,3 +30,6 @@ AS
         INNER JOIN  [db_alquileres_vehiculos].[negocio].[Medio_Pago]    MD ON MD.ID_Medio_Pago = CLI.MedioPago
         WHERE ALQ.Estado = 3
     )
+
+    --GO
+    --SELECT * FROM [db_alquileres_vehiculos].[negocio].[vw_Alquileres_Cancelados]

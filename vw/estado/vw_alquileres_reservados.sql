@@ -30,3 +30,6 @@ AS
         INNER JOIN  [db_alquileres_vehiculos].[negocio].[Medio_Pago] MD    ON MD.ID_Medio_Pago = CLI.MedioPago
         WHERE ALQ.Estado = 0
     )
+
+     --GO
+    --SELECT * FROM [db_alquileres_vehiculos].[negocio].[vw_Alquileres_Reservados]
