@@ -15,7 +15,7 @@ BEGIN
         (
             SELECT TipoDoc 
             FROM [db_alquileres_vehiculos].[negocio].[Alquiler] 
-            WHERE CodFactura = @COD_FACTURA AND Estado = 0
+            WHERE CodFactura = @COD_FACTURA AND Estado = 0 
         ) AND 
         NroDoc  IN 
         (

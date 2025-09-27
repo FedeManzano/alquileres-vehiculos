@@ -91,7 +91,21 @@ BEGIN
         ) >= 3
         BEGIN 
             SET @RES = 6
-            RAISERROR('Como regla de negocio no se permiten tener más de 3 alquileres activos',16,1)
+            RAISERROR('Como regla de negocio no se permiten tener más de 3 vehículos activos',16,1)
+        END
+
+        IF EXISTS
+        (
+            SELECT  1
+            FROM    [db_alquileres_vehiculos].[negocio].[Alquiler]
+            WHERE   TipoDoc         =     @TIPO_DOC     AND 
+                    NroDoc          =     @NRO_DOC      AND 
+                    FAlq            <>     @F_ALQ       AND
+                    Estado        IN      (0,1,2,5)  
+        )
+        BEGIN 
+            SET @RES = 7
+            RAISERROR('No se permite tener más de un alquiler activo.',16,1)
         END
 
         -- Generación del número de alquiler

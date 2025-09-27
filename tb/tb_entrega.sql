@@ -22,6 +22,7 @@ BEGIN
         NroDocCliente       VARCHAR(8)  NOT NULL,  
         LegajoEmpleado      INT         NOT NULL,
         FEntrega            DATETIME    NOT NULL,
+        FDevolucion         DATETIME,
         ID_Tipo_Vehiculo    SMALLINT    NOT NULL,
         PatenteVehiculo     CHAR(7)     NOT NULL,
 
