@@ -32,5 +32,4 @@ USE db_alquileres_vehiculos
 
 
 
-
 SELECT * FROM [db_alquileres_vehiculos].[negocio].[Agencia]

@@ -81,14 +81,23 @@ Desde que el cliente realiza el alquiler, hasta que el mismo realiza la devoluci
 
 ## :green_book: Requisitos Funcionales (Versión reducida)
 
-1.	El sistema debe permitir el ingreso de clientes por su tipo de documento, número de documento, nombre, apellido, fecha de nacimiento, email, teléfono y medios de pago utilizados.
-2.	El sistema debe permitir eliminar uno o varios clientes a partir de su tipo y número de documento.
+1.	El sistema debe permitir el ingreso de clientes por su tipo de documento, número de documento, nombre, apellido, fecha de nacimiento, email, teléfono, medios de pago utilizados y estado.
+2.	El sistema debe permitir dar de baja uno o varios clientes a partir de su tipo y número de documento.
 3.	El sistema de permitir modificar información del cliente como la fecha de nacimiento, email, nombre, apellido y formas de pago.
 4.	El sistema debe permitir la consulta de uno o varios clientes a través de consultas interactivas.
-5.	El sistema debe permitir el registro de un alquiler con el número de alquiler, tipo y número de documento del cliente, la fecha del alquiler, el o los vehículos asignados y el monto total.
-6.	El sistema debe permitir el ingreso de vehículos con su patente, modelo, marca, agencia a la cual pertenece, garaje donde se guarda, km totales y precio unitario por alquiler del mismo.
+5.	El sistema debe permitir el registro de un alquiler con el número de alquiler, tipo y número de documento del cliente, la fecha del alquiler, el o los tipos de vehículos asignados y el estado del alquiler.
+6.	El sistema debe permitir el ingreso de vehículos con su patente, modelo, marca, agencia a la cual pertenece, garaje donde se guarda, km totales.
+7.	El sistema debe permitir el pago del alquiler por diferentes medios de pago, (tarjetas de crédito, débito,  transferencia a través de las billeteras más utilizadas).
+8.	El sistema debe crear y registrar facturas por cada uno de los alquileres con los siguientes datos: Código de factura (F000000000), fecha de emisión, y monto total del alquiler en cuestión.
+9.	El sistema debe registrar adicionales a los clientes que incumplen las políticas del negocio con los siguientes datos: Número del Adicional, factura, monto y una descripción del problema. 
+10.	El sistema debe actualizar el estado de los clientes según su participación con el sistema, los clientes ACTIVOS se les asignará el número 1, los clientes DEUDORES el número 2 y los clientes que se dieron de BAJA el número 3,  este último si no tiene deudas con la empresa.
+11.	El sistema debe permitir el registro de empleados a través de su legajo, nombre, apellido, email y agencia en la que trabajan.
+12.	El sistema debe permitir a los empleados registrar las entregas de los vehículos a los clientes con los siguientes datos: Número de entrega, alquiler, cliente, empleado que realiza la entrega, fecha, tipos de vehículos y patentes.
+13.	El sistema debe registrar la devolución de los vehículos alquilados a través de la fecha de devolución asociada a la entrega de los vehículos implicados.
+14.	El sistema debe actualizar el estado del cliente, del alquiler y de la entrega de vehículos una vez que cliente los devuelva.
 
-> Primera parte hace falta una actualización, proximamente se incorporarán a la lista los que restan.
+
+> Segunda parte hace falta una actualización, proximamente se incorporarán a la lista los que restan.
 
 ## :pencil2: Diseño de clases estimado
 

@@ -23,7 +23,7 @@ BEGIN
     DECLARE @RESPUESTACUIT INT;
     EXEC @RESPUESTACUIT = [db_utils].[library].[sp_Validate_Cuit] @CUITARGENTINA 
 
-    IF @RESPUESTACUIT = 0
+    IF @RESPUESTACUIT <> 1
        RETURN 0 -- CUIT inválido
 
     IF EXISTS (
@@ -39,8 +39,6 @@ BEGIN
         WHERE Correo = @CORREO
     )
         RETURN 3 -- El correo ya está en uso
-    IF @NOMBRE LIKE '%[^a-zA-Z0-9 .]%'
-        RETURN 4 -- El nombre contiene caracteres no permitidos
     
     EXEC [db_utils].[library].[sp_Format_Title] @NOMBRE OUTPUT
     EXEC [db_utils].[library].[sp_Format_Title] @DIRECCION OUTPUT
