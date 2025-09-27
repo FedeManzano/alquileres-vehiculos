@@ -89,7 +89,7 @@ BEGIN
 
         IF 
         (
-            SELECT COUNT(*)
+            SELECT COUNT(*) + 1
             FROM    [db_alquileres_vehiculos].[negocio].[Alquiler]
             WHERE   TipoDoc         =     @TIPO_DOC     AND 
                     NroDoc          =     @NRO_DOC      AND 

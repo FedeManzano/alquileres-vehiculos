@@ -239,9 +239,6 @@ SET @OBTENIDO = [db_alquileres_vehiculos].[negocio].[fn_Validar_Cliente]
 
 EXEC [db_utils].[library].[sp_Assert_Equals] 9,'Nombre válido',@ESPERADO, @OBTENIDO, NULL
 
-
-
-
 ---- TEST 10 ---------------------------------------------------------------------------------------
 SET @ESPERADO =  4 -- SE ESPERA UN 4
 SET @OBTENIDO = -1
