@@ -277,6 +277,25 @@ BEGIN -- COMIENZO DEL CUERPO IF
             END = 1
         ),
     )
+
+    IF NOT EXISTS 
+    (
+        SELECT 1
+        FROM sys.indexes 
+        WHERE name = 'IX_Estado_Cliente'
+    )
+        CREATE INDEX IX_Estado_Cliente 
+        ON [db_alquileres_vehiculos].[negocio].[Cliente](Estado)
+
+
+    IF NOT EXISTS 
+    (
+        SELECT 1
+        FROM sys.indexes 
+        WHERE name = 'IX_MPago_Cliente'
+    )
+        CREATE INDEX IX_MPago_Cliente 
+        ON [db_alquileres_vehiculos].[negocio].[Cliente](MedioPago)
 END 
 ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Cliente] Ya existe en la BD: db_alquileres_vehiculos')
 

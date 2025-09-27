@@ -35,7 +35,7 @@ AS
                 ALQ.NroDoc  = @NRO_DOC
     )
 
---SELECT * FROM [db_alquileres_vehiculos].[negocio].[fn_Ver_Factura](1, '35782388') 
+--SELECT DISTINCT CODIGO_FACTURA FROM [db_alquileres_vehiculos].[negocio].[fn_Ver_Factura](1, '22527701') 
 
 
 
