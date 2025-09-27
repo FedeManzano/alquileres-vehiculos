@@ -78,7 +78,7 @@ BEGIN
         )
         BEGIN 
             SET @RES = 5
-            RAISERROR('El cliente tiene vehículos de la companía en su poder, no puede reservar hasta que los devuelva',16,1)
+            RAISERROR('El cliente tiene vehículos de la companía en su poder, no puede reservar hasta que los devuelva.',16,1)
         END
 
         IF 

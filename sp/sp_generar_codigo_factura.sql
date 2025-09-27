@@ -1,6 +1,5 @@
 USE db_alquileres_vehiculos
 
-
 GO
 CREATE OR ALTER PROCEDURE [negocio].[sp_Generar_Codigo_Factura]
 @COD_FAC    CHAR(10)    OUTPUT 

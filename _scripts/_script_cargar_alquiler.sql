@@ -5,7 +5,7 @@ USE db_alquileres_vehiculos
 
 
 
-EXEC [db_alquileres_vehiculos].[negocio].[sp_Insertar_Alquiler] 1, '74218442', 2, '2025-09-21', NULL 
+EXEC [db_alquileres_vehiculos].[negocio].[sp_Insertar_Alquiler] 1, '74218441', 2, '2025-09-21', NULL 
 EXEC [db_alquileres_vehiculos].[negocio].[sp_Insertar_Alquiler] 1, '74218442', 2, '2025-09-21', NULL
 EXEC [db_alquileres_vehiculos].[negocio].[sp_Insertar_Alquiler] 1, '74218442', 1, '2025-09-21', NULL
 EXEC [db_alquileres_vehiculos].[negocio].[sp_Insertar_Alquiler] 1, '74218442', 1, '2025-09-21', NULL
@@ -19,9 +19,9 @@ EXEC [db_alquileres_vehiculos].[negocio].[sp_Generar_Factura] 1, '74218442', '20
 
 
 
---EXEC [db_alquileres_vehiculos].[negocio].[sp_Registar_Pago] 'F576085646', NULL
+--EXEC [db_alquileres_vehiculos].[negocio].[sp_Registar_Pago] 'F326314175', NULL
 
 
 --SELECT *  FROM [db_alquileres_vehiculos].[negocio].[Alquiler] 
 --SELECT * FROM [db_alquileres_vehiculos].[negocio].[Factura] 
-SELECT * FROM [db_alquileres_vehiculos].[negocio].[vw_Alquileres_Reservados] 
+--SELECT * FROM [db_alquileres_vehiculos].[negocio].[vw_Alquileres_Pagados] 

@@ -1,5 +1,16 @@
 USE db_alquileres_vehiculos
 
+/***
+    Procedimiento para generar la factura para un alquiler:
+    Un alquiler puede estár compuesto por hasta (3) tuplas 
+    de la tabla alquiler,para todas ellas va a existir un 
+    único codigo de factura.
+    PARAMETROS: 
+        @TIPO_DOC -- Tipo de documento.
+        @NRO_DOC  -- Nro de documento.
+        @F_ALQ    -- Fecha en la que se realizó el alquiler.
+        @COD_FAC  -- Código de factura unívoco para el alquiler.
+*/
 GO
 CREATE OR ALTER PROCEDURE [negocio].[sp_Generar_Factura]
 @TIPO_DOC       TINYINT,
