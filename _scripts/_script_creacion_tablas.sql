@@ -428,7 +428,7 @@ BEGIN
 
         -- RESTRCCIÓN PRIMARY KEY
         -- Clave primaria compuesta
-        CONSTRAINT PK_Alquiler PRIMARY KEY 
+        CONSTRAINT PK_Alquiler PRIMARY KEY NONCLUSTERED
         (
             NroAlquiler,
             TipoDoc,
@@ -478,10 +478,8 @@ BEGIN
     );
 
     -- Índices para optimizar consultas frecuentes
-    CREATE INDEX IX_Fecha_Alquiler ON [db_alquileres_vehiculos].[negocio].[Alquiler](FAlq)
+    CREATE CLUSTERED INDEX IX_Fecha_CodFactura ON [db_alquileres_vehiculos].[negocio].[Alquiler](CodFactura)  
 
-    --  Índice para consultas por estado
-    CREATE INDEX IX_Estado_Alquiler ON [db_alquileres_vehiculos].[negocio].[Alquiler](Estado)
 END
 ELSE PRINT('La tabla [db_alquileres_vehiculos].[negocio].[Alquiler] Ya existe en la BD: db_alquileres_vehiculos')
 
