@@ -57,7 +57,8 @@ BEGIN
         (
             SELECT
                 CASE
-                    WHEN TRY_CONVERT(DATE,@F_ALQ) IS NULL THEN 0
+                    WHEN TRY_CONVERT(DATE,@F_ALQ) IS NULL 
+                    AND @F_ALQ <= GETDATE() THEN 0
                     ELSE 1
                 END
         )
