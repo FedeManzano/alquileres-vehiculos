@@ -60,12 +60,15 @@ BEGIN TRY
     COMMIT TRANSACTION T_TEST3
 END TRY 
 BEGIN CATCH
-SELECT 
-        CASE @RES_TEST3
-            WHEN 0 THEN 'El alquiler ya dispone de factura'
-            WHEN 1 THEN 'OK TERMINO BIEN'
-            WHEN 2 THEN 'El monto para la fecha solicitada es erroneo'
-        END
+    DECLARE @MJE_ERROR  NVARCHAR(100),
+            @ESTADO     INT,
+            @SEVERIDAD  INT 
+
+    SELECT  @MJE_ERROR  = ERROR_MESSAGE(),
+            @ESTADO     = ERROR_SEVERITY(),
+            @SEVERIDAD  = ERROR_STATE()
+
+    RAISERROR(@MJE_ERROR, @SEVERIDAD, @ESTADO)
     ROLLBACK TRANSACTION T_TEST3
 END CATCH
 

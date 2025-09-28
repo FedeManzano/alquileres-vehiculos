@@ -51,12 +51,16 @@ BEGIN TRY
 
 END TRY
 BEGIN CATCH
-        SELECT CASE @RES_TEST1 
-            WHEN 0 THEN 'El alquiler ya dispone de factura'
-            WHEN 1 THEN 'OK TERMINO BIEN'
-            WHEN 2 THEN 'El monto para la fecha solicitada es erroneo'
-        END
-   ROLLBACK TRANSACTION T_TEST1
+    DECLARE @MJE_ERROR  NVARCHAR(100),
+            @ESTADO     INT,
+            @SEVERIDAD  INT 
+
+    SELECT  @MJE_ERROR  = ERROR_MESSAGE(),
+            @ESTADO     = ERROR_SEVERITY(),
+            @SEVERIDAD  = ERROR_STATE()
+
+    RAISERROR(@MJE_ERROR, @SEVERIDAD, @ESTADO)
+    ROLLBACK TRANSACTION T_TEST1
 END CATCH
 
 -- SELECT * FROM [db_alquileres_vehiculos].[negocio].[Alquiler]

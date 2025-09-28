@@ -142,7 +142,7 @@ BEGIN
         CodFactura          CHAR(10)        PRIMARY KEY,
         FechaFactura        DATETIME        NOT NULL,
         MontoTotal          DECIMAL(10,2)   NOT NULL,
-
+        Estado              TINYINT         DEFAULT 0,
     
         ------------- ****** RESTRICCIONES CHECK ******* --------------------------------
         -- RESTRICCIONES CHECK El codigo de factura debe tener el formato 'F000000000' 
@@ -166,6 +166,9 @@ BEGIN
                 ELSE 0
             END = 1 AND
             FechaFactura <= GETDATE() -- La fecha no puede ser futura    
+        ),
+        CONSTRAINT CK_Estado_Factura CHECK (
+            Estado IN (0,1)
         )
     );
 END
