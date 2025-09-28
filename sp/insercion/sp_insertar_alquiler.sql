@@ -93,14 +93,16 @@ BEGIN
             FROM    [db_alquileres_vehiculos].[negocio].[Alquiler]
             WHERE   TipoDoc         =     @TIPO_DOC     AND 
                     NroDoc          =     @NRO_DOC      AND 
-                    Estado      IS NULL OR 
-                    Estado      IN      (0,1,2,5)  
+                    (
+                        Estado      IS NULL             OR 
+                        Estado      IN      (0,1,2,5) 
+                    ) 
         ) > 3
         BEGIN 
             SET @RES = 6
             RAISERROR('Como regla de negocio no se permiten tener más de 3 vehículos activos',16,1)
             RETURN 6
-        END
+        END 
 
         IF EXISTS
         (
