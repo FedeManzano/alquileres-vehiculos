@@ -33,7 +33,6 @@ BEGIN TRY
 
     WHILE @CANT_ALQ_T3 < 3
     BEGIN
-        PRINT('ENTRA') 
         -- GENERAR EL ALQUILER
         EXEC [db_alquileres_vehiculos].[negocio].[sp_Insertar_Alquiler] 
         @TIPO_DOC_TEST3, @NRO_DOC_TEST3, @TIPO_VEH_TEST3, @F_ALQ_TEST3, @RES_TEST3 OUTPUT
