@@ -1,7 +1,7 @@
 USE db_alquileres_vehiculos
 
 GO
-CREATE OR ALTER VIEW [negocio].[vw_Cliente_Max_Reservas_Vehiculos]
+CREATE OR ALTER VIEW [negocio].[vw_Clientes_Max_Reservas_Vehiculos]
 AS 
     (       
         SELECT  CLI.TipoDoc                                     AS TIPO_DOC, 
