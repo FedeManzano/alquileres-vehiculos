@@ -1,5 +1,6 @@
 USE db_alquileres_vehiculos
 
+DECLARE @XML_CLIENTES XML
 
 DECLARE @CLIENTES TABLE 
 (
