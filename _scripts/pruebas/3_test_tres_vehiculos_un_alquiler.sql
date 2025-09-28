@@ -73,4 +73,9 @@ END CATCH
 -- SELECT * FROM [db_alquileres_vehiculos].[negocio].[Alquiler]
 -- SELECT * FROM [db_alquileres_vehiculos].[negocio].[Cliente]
 -- SELECT * FROM [db_alquileres_vehiculos].[negocio].[Factura] 
--- SELECT * FROM [db_alquileres_vehiculos].[negocio].[vw_Alquileres_Pagados]
+/* 
+SELECT CODIGO_FACTURA, FECHA_FACTURA, TIPO_DOCUMENTO, NRO_DOCUMENTO, NOMBRE_CLIENTE, APELLIDO_CLIENTE, TIPO_VEHICULO, MEDIO_PAGO, MONTO_TOTAL, ESTADO_ALQUILER,
+    COUNT(CODIGO_FACTURA) OVER(PARTITION BY CODIGO_FACTURA) AS CANTIDAD_VEHICULOS
+FROM [db_alquileres_vehiculos].[negocio].[vw_Todos_Alquileres] 
+ORDER BY CODIGO_FACTURA
+*/
