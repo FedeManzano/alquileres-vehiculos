@@ -98,7 +98,7 @@ BEGIN
     EXEC('CREATE SCHEMA test')
 END 
 ```
-### :green_book: [Documentación de los elementos](elementos/README.md)
+### :green_book: [Documentación de los elementos](elementos/Documentacion_Elementos.md)
 
 
 ## :checkered_flag: Problema a resolver
