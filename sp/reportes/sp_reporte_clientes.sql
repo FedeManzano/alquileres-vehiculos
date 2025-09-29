@@ -1,7 +1,7 @@
 USE db_alquileres_vehiculos
 
 GO
-CREATE OR ALTER PROCEDURE sp_Reporte_Clietes 
+CREATE OR ALTER PROCEDURE [negocio].[sp_Reporte_Clientes] 
 @XML_CLIENTES XML OUTPUT
 AS 
 BEGIN 
@@ -18,6 +18,5 @@ BEGIN
                 FECHA_NAC
         FROM [db_alquileres_vehiculos].[negocio].[vw_Clientes_Activos]
         FOR XML PATH('Cliente'), ROOT('Clientes') 
-
     )
 END

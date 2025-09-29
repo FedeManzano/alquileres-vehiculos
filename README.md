@@ -52,6 +52,55 @@ el nombre de los archivos están en :green_book: [db_util](https://github.com/Fe
 
 > Todos estos elementos tienen que ser creados para poder utilizar los ejercicios de prueba para aprender SQL.
 
+## :scroll: Orden de creación
+
+Lo primero es crear el código que se encuentra en el archivo ```mail.sql``` tal como se muestra en el siguiente codigo:
+
+
+```SQL 
+USE master 
+
+IF NOT EXISTS 
+(
+    SELECT 1 
+    FROM sys.databases 
+    WHERE name = 'db_alquileres_vehiculos' 
+) 
+BEGIN 
+    CREATE DATABASE db_alquileres_vehiculos
+    COLLATE sql_latin1_general_cp1_ci_as
+END
+```
+
+Luego: 
+
+```SQL 
+
+USE db_alquileres_vehiculos
+
+IF NOT EXISTS 
+(
+    SELECT 1
+    FROM sys.schemas 
+    WHERE name = 'negocio'
+)
+BEGIN 
+    EXEC('CREATE SCHEMA negocio')
+END 
+
+IF NOT EXISTS 
+(
+    SELECT 1
+    FROM sys.schemas 
+    WHERE name = 'test'
+)
+BEGIN 
+    EXEC('CREATE SCHEMA test')
+END 
+```
+### :green_book: [Documentación de los elementos](elementos/README.md)
+
+
 ## :checkered_flag: Problema a resolver
 
 En el presente documento se presentan los requerimientos para el sistema de alquileres de vehículos de la mpresa ```Viajantes```, a grandes rasgos el sistema debe permitirle a los usuarios alquilar varios ```tipos de vehículos``` por un periodo de una semana, cada alquiler tiene que ser registrado y controlado a través de funcionalidades que permitan conocer el estado de cada uno de ellos y realizar los ajustes pertinentes a los datos de manera tal que, la empresa en todo momento conozca el estado de sus vehículos distribuidos por diferentes ```agencias``` que son parte de la compañía. <br>
