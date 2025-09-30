@@ -144,7 +144,111 @@ Inserta un alquiler y en el campo factura lo deja con un valor NULL hasta que se
 */
 DECLARE @RES INT = 0
 EXEC [db_alquileres_vehiculos].[negocio].[sp_Insertar_Alquiler] 
-    1, '25444222', 1, '2025-03-01', @RES OUTPUT -- Toma el valor 1 si todo sale bien.
+    1,  -- Tipo de documento (1: DNI, 2: LC, 3: PAS)
+    '25444222', -- Nro de documento
+    1, -- Tipo de vehículo
+    '2025-03-01', -- Fecha del Alquiler
+    @RES OUTPUT -- Toma el valor 1 si todo sale bien.
+```
+
+#### Ejemplo de como ingresar un alquiler y generar la factura
+
+Para poder llevar a cabo esto es necesario realizar dos operaciones en la base de datos y asegurarse que la integridad 
+de los datos almacenados no corra riesgo de perder la integridad, por esta razón ambas operaciones se ejecutan a través de una
+transacción.
+
+```SQL 
+USE db_alquileres_vehiculos
+
+DECLARE @CLIENTES TABLE  -- Crea una variable del tipo TABLE para almacenar la clave compuesta de c/ cliente.
+(
+    -- Se establece un ID AUTOINCREMENTAL para poder seleccionar los reg de manera aleatoria.
+    ID INT IDENTITY(1,1)    PRIMARY KEY,
+    TipoDoc                 TINYINT NOT NULL,
+    NroDoc                  VARCHAR(8) NOT NULL
+)
+
+-- Se carga la tabla @CLIENTES
+INSERT INTO @CLIENTES(TipoDoc, NroDoc)
+SELECT TipoDoc, NroDoc
+FROM [db_alquileres_vehiculos].[negocio].[Cliente]
+DECLARE @SELECTOR_CLIENTE_RND INT = -1 -- SELECCIONAR CLIENTE RANDOM
+
+--- TEST ALQUILERES DE VEHÍCULOS -------------------------------------------------------------------------------------
+-- *******************************************************************************************************************
+--------- TEST 1 Cliente hace un alquiler y queda la factura sin pagar -----------------------------------------------
+
+BEGIN TRANSACTION T_TEST_1 -- se crea la transacción
+BEGIN TRY     
+
+    -- se obtiene un valor random de 0-999 para seleccionar un registro aleatorio
+    EXEC @SELECTOR_CLIENTE_RND = [db_utils].[library].[sp_Str_Number_Random] 1, 9, 3, NULL
+
+    -- TipoDoc aleatorio
+    DECLARE @TIPO_DOC_TEST1 TINYINT     = (SELECT TipoDoc FROM @CLIENTES WHERE ID =  @SELECTOR_CLIENTE_RND)
+    
+    -- NroDoc aleatorio
+    DECLARE @NRO_DOC_TEST1  VARCHAR(8)  = (SELECT NroDoc FROM @CLIENTES WHERE ID =  @SELECTOR_CLIENTE_RND)
+
+    -- Tipo de vehículo
+    DECLARE @TIPO_VEH_TEST1 TINYINT     = 1 -- AUTOS
+    
+    -- Fecha utilizada en todos los test
+    DECLARE @F_ALQ_TEST1    DATE        = '2025-09-25' -- FECHA ANTERIOR A LA ACTUAL - correcta
+
+
+    DECLARE @RES_TEST1      INT         = -1        
+
+    /**
+        Se ejecuta el procedimiento para insertar el alquiler.
+    */
+    EXEC [db_alquileres_vehiculos].[negocio].[sp_Insertar_Alquiler] 
+    @TIPO_DOC_TEST1, @NRO_DOC_TEST1, @TIPO_VEH_TEST1, @F_ALQ_TEST1, @RES_TEST1 OUTPUT
+
+    -- si el alq no se pudo insertar genera el rollback.
+    IF @RES_TEST1 <> 1
+        ROLLBACK
+
+    -- para poder llevar a cabo el test es necesario un número de factura aleatorio y único.
+    DECLARE @CF_TEST1 CHAR(10)
+
+    -- Se genera el CodFactura
+    EXEC [db_alquileres_vehiculos].[negocio].[sp_Generar_Codigo_Factura] @CF_TEST1 OUTPUT
+
+    /***
+        Con el codfactura se genera la factura correspondiente al alquiler.
+        Es importante recalcar que, si el mismo cliente realiza reservas de vehículos
+        antes de que el alquiler cambie de estado (0: Reservado, 1:Pagado) NO SE 
+        GENERA UN NUEVO CODIGO DE FACTURA, sino que se actualiza la actual.
+    */
+    EXEC [db_alquileres_vehiculos].[negocio].[sp_Generar_Factura] 
+    @TIPO_DOC_TEST1, @NRO_DOC_TEST1, @F_ALQ_TEST1, @CF_TEST1,  @RES_TEST1 OUTPUT
+
+
+    /***
+        Si todo sale bien muestra los mensajes aquí descriptos.
+    */
+    SELECT 
+        CASE @RES_TEST1 
+            WHEN 0 THEN 'El alquiler ya dispone de factura'
+            WHEN 1 THEN 'OK TERMINO BIEN'
+            WHEN 2 THEN 'El monto para la fecha solicitada es erroneo'
+        END
+    COMMIT TRANSACTION T_TEST1 -- Confirma la transacción
+
+END TRY
+BEGIN CATCH
+    DECLARE @MJE_ERROR  NVARCHAR(100),
+            @ESTADO     INT,
+            @SEVERIDAD  INT 
+
+    SELECT  @MJE_ERROR  = ERROR_MESSAGE(),
+            @ESTADO     = ERROR_SEVERITY(),
+            @SEVERIDAD  = ERROR_STATE()
+    -- Muestra el mje error y regresa todo hacia atras.
+    RAISERROR(@MJE_ERROR, @SEVERIDAD, @ESTADO)
+    ROLLBACK TRANSACTION T_TEST1
+END CATCH
 ```
 
 ### sp_Insertar_Cliente
