@@ -375,5 +375,37 @@ BEGIN
         ROLLBACK TRANSACTION T_INSERTAR_CLIENTE
     END CATCH
 END
-
 ```
+
+### sp_Generar_Codigo_Factura
+
+Un procedimientos que genera el código de factura de cada alquiler con el formato ```F000000000``` validando la existencia
+del mismo en la base de datos.
+
+#### Ejemplo
+
+```SQL
+DECLARE @CF CHAR(10)
+EXEC [db_alquileres_vehiculos].[negocio].[sp_Generar_Codigo_Factura] @CF OUTPUT -- Devuelve co código de factura
+SELECT @CF
+```
+
+### sp_Generar_Factura
+
+Genera la factura para un alquiler determinado, cada alquiler puede estar compuesto hasta con tres tuplas 
+de la tabla alquiler, por esta razón se realiza el cálculo del monto a partir de la función ```fn_Calcular_Monto_Total```.
+
+#### Ejemplo
+
+```SQL
+EXEC [db_alquileres_vehiculos].[negocio].[sp_Generar_Factura] 
+1, -- TipoDoc
+'25444111', --NroDoc
+'2025-03-01', -- FechaFacturación
+'F123456789',  -- CodFactura
+@RES_TEST1 OUTPUT -- 1 se cargó la factura correctamente.
+```
+
+
+
+

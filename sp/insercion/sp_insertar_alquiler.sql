@@ -29,7 +29,6 @@ BEGIN
         BEGIN 
             SET @RES = 0
             RAISERROR('Tipo de documento inválido',16,1)
-            RETURN 0
         END
 
         IF NOT EXISTS -- Validación del cliente
@@ -41,7 +40,6 @@ BEGIN
         BEGIN
             SET @RES = 2
             RAISERROR('Cliente inexistente',16,1)
-            RETURN 2
         END
 
         IF NOT EXISTS -- Validación del tipo de vehículo
@@ -53,7 +51,6 @@ BEGIN
         BEGIN 
             SET @RES = 3
             RAISERROR('Tipo de vehículo inválido',16,1)
-            RETURN 3
         END
 
         DECLARE @VF INT =  -- Validación de la fecha de alquiler
@@ -70,7 +67,6 @@ BEGIN
         BEGIN 
             SET @RES = 4
             RAISERROR('Fecha de alquiler inválida',16,1)
-            RETURN 4
         END
 
         IF EXISTS -- Validación de alquileres activos para el mismo cliente y tipo de vehículo
@@ -84,7 +80,6 @@ BEGIN
         BEGIN 
             SET @RES = 5
             RAISERROR('El cliente tiene vehículos de la companía en su poder, no puede reservar hasta que los devuelva.',16,1)
-            RETURN 5
         END
 
         IF 
@@ -101,7 +96,6 @@ BEGIN
         BEGIN 
             SET @RES = 6
             RAISERROR('Como regla de negocio no se permiten tener más de 3 vehículos activos',16,1)
-            RETURN 6
         END 
 
         IF EXISTS
@@ -116,7 +110,6 @@ BEGIN
         BEGIN 
             SET @RES = 7
             RAISERROR('No se permite tener más de un alquiler activo.',16,1)
-            RETURN 7
         END
 
         -- Generación del número de alquiler
