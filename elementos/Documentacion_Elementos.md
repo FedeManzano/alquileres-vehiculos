@@ -69,6 +69,7 @@ Después de crear la base de datos desde el archivo **main** hay que crear los e
 | 1       |/sp/insercion        |sp_Insertar_Agencia         |
 | 2       |/sp/insercion        |sp_Insertar_Alquiler        |
 | 3       |/sp/insercion        |sp_Insertar_Cliente         |
+| 4       |/sp/insercion        |sp_Insertar_Tipo_Doc        |
 | 4       |/sp/facturacion      |sp_Generar_Codigo_Factura   |
 | 5       |/sp/facturacion      |sp_Generar_Factura          |
 | 6       |/sp/facturacion      |sp_Registrar_Pago           |
