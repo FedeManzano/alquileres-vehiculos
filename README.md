@@ -1,6 +1,6 @@
 
 <p align="center">
-    <img src="./portada/portada.png" height="250px" width="300px" />
+    <img src="portada/portada.png" height="250px" width="300px" />
 </p>
 
 # :car: Alquileres de vehículos
