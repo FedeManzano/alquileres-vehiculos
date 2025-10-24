@@ -1,6 +1,6 @@
 
 <p align="center">
-    <img src="portada/portada.png" height="250px" width="300px" />
+    <img src="https://fotos.miarroba.com/th/615e/2D69A964432968FB33BE2568FB33B1.png" height="250px" width="300px" />
 </p>
 
 # :car: Alquileres de vehículos
@@ -152,7 +152,7 @@ Desde que el cliente realiza el alquiler, hasta que el mismo realiza la devoluci
 El diagrama es el diseño de la capa de aplicación, a partir de este diseño se va a elegit lenguaje de programación orientado a objetos
 es más apropiado y se ajusta mejor a las necesidades del proyecto.
 
-![Diagrama de Clases](mod/diagrama-clases.png)
+![Diagrama de Clases](https://fotos.miarroba.com/th/ce9f/2E69A964322968FB33AC2668FB33A0.png)
 
 Las siguientes clases:
 - RegistrarPersona
@@ -172,7 +172,7 @@ Son servivios, a los cuales van a acceder a través de la aplicación a partir d
 El motor seleccionado MSSQL SERVER, como se describe en los requisitos de este docmuento.
 > El diseño de la base de datos está libre a modificaciones, a grandes rasgos el diagrama quedaría representado de la siguiente manera.
 
-![Modelado](mod/DER.png)
+![Modelado](https://fotos.miarroba.com/th/ea7e/2E69A964322868FB33AB2668FB33A0.png)
 
 ## Autor
 
