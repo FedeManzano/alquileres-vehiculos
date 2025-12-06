@@ -1,0 +1,61 @@
+{
+  "files.associations": {
+    "*.sql": "sql"
+  },
+  "sql.format.keywordCase": "upper",
+  "sql.format.indentSize": 4,
+  "sql.format.linesBetweenQueries": 2,
+  "mssql.connections": [
+    {
+      "server": "localhost",
+      "database": "db_alquileres_vehiculos",
+      "authenticationType": "SqlLogin",
+      "userName": "",
+      "password": "",
+      "emptyPasswordInput": false,
+      "savePassword": false,
+      "profileName": "Alquileres Vehiculos"
+    }
+  ],
+  "mssql.format": {
+    "keywordCase": "upper",
+    "indentSize": 4,
+    "tabSize": 4,
+    "useTabs": false,
+    "placeCommasBeforeNextStatement": false,
+    "placeSelectStatementReferencesOnNewLine": false,
+    "placeEachReferenceOnNewLine": false,
+    "alignColumnDefinitionsInColumns": false,
+    "datatypeCasing": "lowercase"
+  },
+  "sqltools.connections": [
+    {
+      "name": "Alquileres Vehiculos",
+      "driver": "MSSQL",
+      "server": "localhost",
+      "port": 1433,
+      "database": "db_alquileres_vehiculos",
+      "username": "sa",
+      "password": "FnAZW3187",
+      "connectionTimeout": 30,
+      "requestTimeout": 30,
+      "previewLimit": 50,
+      "mssqlOptions": {
+        "appName": "SQLTools",
+        "useUTC": true,
+        "encrypt": true,
+        "trustServerCertificate": true,
+        "enableArithAbort": true,
+        "connectTimeout": 30
+      }
+    }
+  ],
+  "sqltools.useNodeRuntime": true,
+  "sqltools.format": {
+    "keywordCase": "upper",
+    "indentSize": 4,
+    "tabSize": 4,
+    "useTabs": false
+  }
+}
+

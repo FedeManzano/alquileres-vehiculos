@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Ejecutar SQL",
+      "type": "mssql",
+      "request": "attach",
+      "server": "localhost",
+      "database": "db_alquileres_vehiculos"
+    }
+  ]
+}
+

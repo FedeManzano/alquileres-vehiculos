@@ -3,9 +3,13 @@
 backup/
 *.bak
 
-# Ignore VS Code settings
-.vscode/
-*.code-workspace
+# Ignore VS Code user-specific settings (but keep project settings)
+.vscode/*.code-workspace
+# Keep these project configuration files:
+# .vscode/settings.json
+# .vscode/extensions.json
+# .vscode/launch.json
+# .vscode/CONFIGURACION_SQL.md
 
 # Ignore system files
 Thumbs.db
